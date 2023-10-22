@@ -1,0 +1,167 @@
+<section id="main-header">
+  <h1>Brooklyn Public Library</h1>
+  <div class="flex">
+    <nav id="main_menu">
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#favorites">Favorites</a></li>
+        <li><a href="#coffe-shop">Coffee shop</a></li>
+        <li><a href="#contacts">Contacts</a></li>
+        <li><a href="#card">Library Card</a></li>
+      </ul>
+    </nav>
+    <div class="relative-container">
+      <div id="user_menu_button" onclick="this.userShow(event)">
+        <img src="./assets/icons/union.svg" />
+      </div>
+      <div id="user_menu">
+        <ul>
+          <li><strong>Profile</strong></li>
+          <li><a onclick="modal_login.style.display='flex'; this.userMenuHide()">Log&nbsp;in</a></li>
+          <li><a onclick="modal_profile.style.display='flex'; this.userMenuHide()">My&nbsp;profile</a></li>
+          <li><a onclick="modal_register.style.display='flex'; this.userMenuHide()">Register</a></li>
+          <li><a onclick="this.logOut()">Log&nbsp;Out</a></li>
+        </ul>
+      </div>
+    </div>
+    <div id="burger_menu_button" onclick="this.menuShow(event)">
+      <img src="./assets/icons/burger.svg" />
+    </div>
+    <div id="burger_menu_close" onclick="this.menuHide(event)">
+      <img src="./assets/icons/close.svg" />
+    </div>
+  </div>
+  <div id="burger_menu">
+    <nav>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#favorites">Favorites</a></li>
+        <li><a href="#coffe-shop">Coffee shop</a></li>
+        <li><a href="#contacts">Contacts</a></li>
+        <li><a href="#card">Library Card</a></li>
+      </ul>
+    </nav>
+  </div>
+</section>
+
+<style>
+  #user_menu {
+    position: absolute;
+    top: 36px;
+    right: 0;
+    background-color: white;
+    display: none;
+    z-index: 6;
+    color: black;
+    font-size: 0.75rem;
+    width: 4rem;
+  }
+  #user_menu li {
+    margin: 1em 0.25em;
+    text-align: center;
+  }
+  #user_menu strong.menu-title {
+    font-size: 0.6rem;
+  }
+  #user_menu strong::after {
+    content: '';
+    display: block;
+    margin: 0.5em auto 1em;
+    width: 40px;
+    height: 1px;
+    background-color: var(--color-accent);
+  }
+  #burger_menu {
+    position: absolute;
+    top: 4.5rem;
+    right: 0;
+    width: 330px;
+    height: calc(570px - 4.5rem);
+    background-color: black;
+    opacity: 0;
+    transition: opacity 0.3s linear;
+    z-index: 5;
+    display: none;
+    justify-content: center;
+    padding-top: 0.5rem;
+  }
+  #burger_menu ul {
+    display: flex;
+    flex-direction: column;
+    row-gap: 1.5rem;
+  }
+  #burger_menu li {
+    line-height: 2.5rem;
+    text-align: center;
+    list-style-type: none;
+  }
+  #main-header {
+    color: white;
+    min-height: 4.5rem;
+    background-color: black;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1rem;
+    position: relative;
+  }
+  .flex {
+    display: flex;
+    column-gap: 1.5rem;
+  }
+  #main_menu ul {
+    margin-right: 1rem;
+    display: flex;
+    flex-flow: row nowrap;
+    column-gap: 1.5rem;
+  }
+  #main_menu li {
+    list-style-type: none;
+  }
+  #burger_menu_button {
+    padding-top: 6px;
+    display: none;
+  }
+  #burger_menu_close {
+    display: none;
+  }
+  #burger_menu_close,
+  #user_menu_button,
+  #burger_menu_button {
+    box-sizing: border-box;
+    height: 34px;
+    width: 45px;
+    cursor: pointer;
+    transition: opacity 0.3s linear;
+  }
+  #user_menu_button {
+    background-color: white;
+    color: var(--color-accent);
+    font-size: 0.75rem;
+    width: 34px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  #user_menu_button img {
+    filter: brightness(0) saturate(100%) invert(0%) sepia(10%) saturate(7483%) hue-rotate(256deg) brightness(92%) contrast(96%);
+  }
+  #burger_menu_close:hover,
+  #user_menu_button:hover,
+  #burger_menu_button:hover {
+    opacity: 0.6;
+  }
+  #main_menu {
+    display: block;
+  }
+  @media screen and (max-width: 1024px) {
+    #main_menu {
+      display: none;
+    }
+    #burger_menu_button {
+      display: block;
+    }
+  }
+</style>

@@ -1,0 +1,89 @@
+<div id="modal_profile" onclick="this.modalClose(event)">
+  <div class="modal_inner">
+    <div class="modal_close" onclick="modal_profile.style.display='none'">
+      <img width="15" height="15" src="./assets/icons/close_modal.svg" />
+    </div>
+
+    <div class="profile_left">
+      <div class="profile_avatar">JD</div>
+      <div class="profile_name">John Doe</div>
+    </div>
+
+    <div class="profile_right">
+      <h5>My profile</h5>
+
+      <div id="profile_statistics"></div>
+
+      <p class="rented_header">Rented books</p>
+      <ul id="rented_books">
+        <li>The Last Queen, Clive Irving</li>
+        <li>Dominicana, Angie Cruz</li>
+      </ul>
+
+      <p class="profile_card">
+        Card number&nbsp;&nbsp;
+        <span id="card_number">F00234030</span>&nbsp;&nbsp;
+        <img src="./assets/icons/copy.svg" onclick="this.clipboardCopy()" />
+      </p>
+    </div>
+  </div>
+</div>
+
+<style>
+  #modal_profile h5 {
+    font-size: 2rem;
+  }
+  .profile_left {
+    width: 170px;
+    height: 100%;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 1rem;
+  }
+  .profile_right {
+    padding: 0 1rem;
+  }
+  .profile_avatar {
+    width: 4rem;
+    height: 4rem;
+    background-color: white;
+    color: var(--color-accent);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .profile_name {
+    background-color: white;
+    padding: 0 1rem;
+    text-align: center;
+  }
+  .profile_card {
+    font-size: 1rem;
+    margin-top: 2rem;
+  }
+  .profile_card img {
+    cursor: pointer;
+  }
+  #card_number {
+    color: var(--color-accent);
+  }
+  .rented_header {
+    font-size: 1.25rem;
+  }
+  #rented_books {
+    height: 3.5rem;
+    overflow-y: auto;
+  }
+  #rented_books li {
+    margin: 0.5rem 1rem;
+    list-style: disc;
+  }
+  #profile_statistics {
+    display: flex;
+    flex-direction: row;
+    column-gap: 1rem;
+  }
+</style>

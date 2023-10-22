@@ -1,0 +1,95 @@
+<div id="modal_buy_card" onclick="this.modalClose(event)">
+  <div class="modal_inner">
+    <div class="modal_close" onclick="modal_buy_card.style.display='none'">
+      <img width="15" height="15" src="./assets/icons/close_modal.svg" />
+    </div>
+    <div class="modal_buy-header">
+      <h5>Buy a library card</h5>
+    </div>
+    <div class="modal_buy-inner">
+      <form id="form_buy_card" onsubmit="this.formBuyCard(event, modal_buy_card)" onchange="this.formBuyCardChanged(event, this)">
+        <div class="card_info">
+          <label>Bank card number<input type="text" name="card" maxlength="19" /></label>
+          <label>
+            <span>Expiration code</span>
+            <div>
+              <input type="text" name="month" maxlength="2" />
+              &nbsp;
+              <input type="text" name="year" maxlength="2" />
+            </div>
+          </label>
+          <label>CVC<input type="text" name="cvc" maxlength="3" /></label>
+        </div>
+        <div class="cardholder_info">
+          <label>Cardholder name<input type="text" name="name" /></label>
+          <label>Postal code<input type="text" name="post" /></label>
+          <label>City / Town<input type="text" name="city" /></label>
+        </div>
+        <div>
+          <button type="submit" class="small-button" disabled>Buy</button>
+          <strong>&nbsp;&nbsp;$ 25.00</strong>
+        </div>
+      </form>
+      <p class="modal_buy-info">
+        If you are live, work, attend school, or pay property taxes in New York State, you can get a $25 digital library card right now using this online form.
+        Visitors to New York State can also use this form to apply for a temporary card.
+      </p>
+    </div>
+  </div>
+</div>
+
+<style>
+  .card_info,
+  .cardholder_info {
+    display: flex;
+    flex-direction: column;
+    row-gap: 0.5rem;
+  }
+  .cardholder_info {
+    margin-top: 1rem;
+  }
+  #form_buy_card input[name='month'],
+  #form_buy_card input[name='year'],
+  #form_buy_card input[name='cvc'] {
+    box-sizing: border-box;
+    width: 45px;
+  }
+  #modal_buy_card .modal_close {
+    top: 0.875rem;
+    right: 0.875rem;
+  }
+  #modal_buy_card .modal_close img {
+    filter: brightness(0) saturate(100%) invert(100%) sepia(100%) saturate(27%) hue-rotate(75deg) brightness(105%) contrast(100%);
+  }
+  #form_buy_card strong {
+    letter-spacing: 2px;
+    vertical-align: bottom;
+  }
+  .modal_buy-inner {
+    position: relative;
+    display: flex;
+    margin: 1.5rem 2rem;
+    column-gap: 2rem;
+  }
+  .modal_buy-header {
+    width: 100%;
+    height: 3rem;
+    background-color: black;
+    color: white;
+  }
+  .modal_buy-header h5 {
+    text-align: center;
+    width: 100%;
+    text-transform: uppercase;
+    font-size: 2rem;
+    margin-top: 0.5rem;
+  }
+  .modal_buy-info {
+    color: #8e8e8e;
+    letter-spacing: 2px;
+    font-size: 0.75rem;
+    line-height: 1rem;
+    margin-block-start: 0;
+    width: 320px;
+  }
+</style>

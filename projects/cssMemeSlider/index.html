@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Dynamicaly generated favicon -->
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg viewBox='0 0 64 64' font-size='56' font-family='Arial' font-weight='600' xmlns='http://www.w3.org/2000/svg'%3E
+        %3Crect width='64' height='64' rx='12' fill='gray'/%3E
+        %3Ctext y='52' x='2' textLength='60' lengthAdjust='spacingAndGlyphs' fill='white'%3E M %3C/text%3E%3C/svg%3E" />
+    <!-- Styles -->
+    <link rel="stylesheet" href="./styles.css" />
+    <title>Meme slider</title>
+  </head>
+  <body>
+    <main>
+      <input type="radio" name="meme" id="meme01" checked />
+      <input type="radio" name="meme" id="meme02" />
+      <input type="radio" name="meme" id="meme03" />
+      <input type="radio" name="meme" id="meme04" />
+
+      <wrap-slider>
+        <div class="slider-img">
+          <img src="./assets/meme01.jpg" alt="meme" />
+          <img src="./assets/meme02.jpg" alt="meme" />
+          <img src="./assets/meme03.jpg" alt="meme" />
+          <img src="./assets/meme04.jpg" alt="meme" />
+        </div>
+      </wrap-slider>
+
+      <wrap-bottom>
+        <wrap-text>
+          <div class="slider-text">
+            <p>You could get a better job</p>
+            <p>Acquiring a talent</p>
+            <p>Candidate must get the the final interview</p>
+            <p>Dancing combo (just for fun)</p>
+          </div>
+        </wrap-text>
+
+        <ul class="controlls">
+          <li>
+            <label for="meme01">
+              <span class="dot"></span>
+            </label>
+          </li>
+          <li>
+            <label for="meme02">
+              <span class="dot"></span>
+            </label>
+          </li>
+          <li>
+            <label for="meme03">
+              <span class="dot"></span>
+            </label>
+          </li>
+          <li>
+            <label for="meme04">
+              <span class="dot"></span>
+            </label>
+          </li>
+        </ul>
+      </wrap-bottom>
+      <div class="description">
+        <p>Дал не ту ссылку в форме сабмита.</p>
+        <p>Ссылка на PR: <a href="https://github.com/mrHoft/cssMemeSlider/pull/2">https://github.com/mrHoft/cssMemeSlider/pull/2</a></p>
+      </div>
+    </main>
+  </body>
+</html>

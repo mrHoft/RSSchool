@@ -1,0 +1,213 @@
+:root {
+  color-scheme: light dark;
+  --accent-color: #bdae82;
+  --primary-color: #22254b;
+  --secondary-color: #373b69;
+
+  --card-width: 20rem;
+  --card-height: 12rem;
+  --card-ar: 5/3;
+}
+
+p {
+  margin: 0.2rem 0;
+}
+
+html {
+  width: 100%;
+  background-color: var(--primary-color);
+  font-size: 20px;
+  color: #eee;
+}
+
+body {
+  width: 100%;
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  max-height: 100vh;
+}
+
+main {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+#results {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(var(--card-width), 1fr));
+  gap: 0.5rem;
+}
+#results > * {
+  padding-bottom: calc(100% / (var(--card-ar)));
+}
+
+#title {
+  width: inherit;
+  background-color: var(--secondary-color);
+  padding: 0.5rem;
+}
+
+#total {
+  font-size: 0.75rem;
+  margin-top: 1rem;
+  width: inherit;
+  text-align: center;
+}
+
+header {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 0 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--secondary-color);
+}
+
+header p {
+  margin-left: 1rem;
+}
+
+/* Search */
+#search {
+  margin: 0.5rem 1rem 0.5rem auto;
+  width: 8rem;
+  border-radius: 50px;
+  border: 2px solid var(--primary-color);
+  position: relative;
+  transition: width 0.3s linear;
+}
+#search:has(input[name='request']:focus) {
+  width: 16rem;
+  background-color: var(--primary-color);
+}
+#search input[type='submit'] {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  box-sizing: border-box;
+  width: 1.2rem;
+  height: 1.2rem;
+  background-image: url(./assets/search.svg);
+  background-color: transparent;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s linear;
+  &:focus {
+    border: none;
+  }
+  &:hover {
+    filter: invert(26%) sepia(15%) saturate(638%) hue-rotate(7deg) brightness(92%) contrast(87%);
+  }
+}
+#search input[name='request'] {
+  background-color: transparent;
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  color: #fff;
+  width: 4rem;
+  border-radius: 50px;
+  border: none;
+  transition: width 0.3s linear;
+  &::placeholder {
+    color: #7378c5;
+  }
+  &:focus {
+    width: 12rem;
+    outline: none;
+  }
+}
+.search__clear {
+  position: absolute;
+  top: 0.7125rem;
+  right: 2rem;
+  box-sizing: border-box;
+  width: 0.75rem;
+  height: 0.75rem;
+  background-image: url(./assets/cross.svg);
+  background-color: transparent;
+  background-position: center;
+  background-size: contain;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s linear;
+  &:focus {
+    border: none;
+  }
+  &:hover {
+    filter: invert(26%) sepia(15%) saturate(638%) hue-rotate(7deg) brightness(92%) contrast(87%);
+  }
+}
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 0.25rem 4rem;
+  background-color: var(--secondary-color);
+}
+
+.author {
+  display: flex;
+  align-items: center;
+  column-gap: 2rem;
+}
+
+a,
+a:visited {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.3s linear;
+}
+a:hover {
+  color: var(--accent-color);
+}
+
+.rss-logo {
+  width: 5.4rem;
+  height: 2rem;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-image: url('./assets/rss.svg');
+  transition: all 0.3s linear;
+}
+.rss-logo:hover {
+  filter: invert(26%) sepia(15%) saturate(638%) hue-rotate(7deg) brightness(92%) contrast(87%);
+}
+
+/* Image card */
+.card {
+  position: relative;
+  background-color: var(--secondary-color);
+  background-size: cover;
+  border-radius: 0.25rem;
+}
+.card__name {
+  position: absolute;
+  bottom: 0.5rem;
+  left: 0.5rem;
+  text-shadow: 1px 1px black;
+}
+.card__date {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  background-color: var(--secondary-color);
+  color: var(--accent-color);
+  padding: 0.1rem;
+  border-radius: 0.125rem;
+  padding: 0 0.125rem;
+}

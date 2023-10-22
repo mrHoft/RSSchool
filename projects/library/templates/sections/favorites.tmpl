@@ -1,0 +1,195 @@
+<section id="favorites">
+  <h2>Favorites</h2>
+  <p class="strong">Pick favorites of season</p>
+  <div id="season">
+    <form>
+      <ul>
+        <li>
+          <label><input type="radio" name="fav" onClick="this.setSeason('winter')" checked />Winter</label>
+        </li>
+        <li>
+          <label><input type="radio" name="fav" onClick="this.setSeason('spring')" />Spring</label>
+        </li>
+        <li>
+          <label><input type="radio" name="fav" onClick="this.setSeason('summer')" />Summer</label>
+        </li>
+        <li>
+          <label><input type="radio" name="fav" onClick="this.setSeason('autumn')" />Autumn</label>
+        </li>
+      </ul>
+    </form>
+  </div>
+
+  <div id="offer">
+    <div class="book">
+      <div class="book_card">
+        <p class="staff">Staff Picks</p>
+        <h4 class="book_title">The Book Eaters</h4>
+        <h4 class="book_author">By Sunyi Dean</h4>
+        <p class="book_description">
+          An unusual sci-fi story about a book eater woman who tries desperately to save her dangerous mind-eater son from tradition and certain death. Complete
+          with dysfunctional family values, light Sapphic romance, and a strong, complex protagonist. Not for the faint of heart.
+        </p>
+        <img class="book_cover" src="./assets/images/book01.png" />
+
+        <button class="small-button bottom" onclick="this.bookBuy(this.parentNode)">Buy</button>
+      </div>
+    </div>
+
+    <div class="book">
+      <div class="book_card">
+        <p class="staff">Staff Picks</p>
+        <h4 class="book_title">Cackle</h4>
+        <h4 class="book_author">By Rachel Harrison</h4>
+        <p class="book_description">
+          Are your Halloween movies of choice The Witches of Eastwick and Practical Magic? Look no further than here - where a woman recovering from a breakup
+          moves to a quaint town in upstate New York and befriends a beautiful witch.
+        </p>
+        <img class="book_cover" src="./assets/images/book02.png" />
+
+        <button class="small-button bottom" onclick="this.bookBuy(this.parentNode)">Buy</button>
+      </div>
+    </div>
+
+    <div class="book">
+      <div class="book_card">
+        <p class="staff">Staff Picks</p>
+        <h4 class="book_title">Dante: Poet of the Secular World</h4>
+        <h4 class="book_author">By Erich Auerbach</h4>
+        <p class="book_description">
+          Auerbach's engaging book places the 'Comedy' within the tradition of epic, tragedy, and philosophy in general, arguing for Dante's uniqueness as one
+          who raised the individual and his drama of soul into something of divine significance—an inspired introduction to Dante's main themes.
+        </p>
+        <img class="book_cover" src="./assets/images/book03.png" />
+
+        <button class="small-button bottom" onclick="this.bookBuy(this.parentNode)">Buy</button>
+      </div>
+    </div>
+
+    <div class="book">
+      <div class="book_card">
+        <p class="staff">Staff Picks</p>
+        <h4 class="book_title">The Last Queen</h4>
+        <h4 class="book_author">By Clive Irving</h4>
+        <p class="book_description">
+          A timely and revelatory new biography of Queen Elizabeth (and her family) exploring how the Windsors have evolved and thrived as the modern world has
+          changed around them.
+        </p>
+        <img class="book_cover" src="./assets/images/book04.png" />
+
+        <button class="small-button bottom" onclick="this.bookBuy(this.parentNode)">Buy</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  #favorites {
+    margin: 2.5rem 1rem 1rem;
+  }
+  #season {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    max-width: 700px;
+    background: hsla(0, 0%, 100%, 0.8);
+    z-index: 2;
+  }
+  @media screen and (max-width: 1024px) {
+    #season {
+      position: sticky;
+      top: 0;
+    }
+  }
+  #season ul {
+    display: flex;
+    flex-direction: row;
+    padding: 0;
+    justify-content: space-between;
+  }
+  #season li {
+    list-style-type: none;
+    transition: 0.3s linear;
+  }
+  #season li:hover {
+    color: var(--color-accent);
+  }
+  #season label {
+    cursor: pointer;
+  }
+  #season input[type='radio'] {
+    margin-right: 1rem;
+    cursor: pointer;
+  }
+  #season label:has(input:checked) {
+    font-weight: bold;
+  }
+
+  #offer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  .book {
+    width: 590px;
+    margin: 1rem 0;
+  }
+  @media screen and (max-width: 1024px) {
+    .book {
+      margin: 1rem auto;
+    }
+  }
+
+  .book_card {
+    font-size: 0.75rem;
+    width: 550px;
+    box-sizing: border-box;
+    height: 555px;
+    position: relative;
+    padding: 0 1rem;
+    border: 1px solid black;
+  }
+  .book_card p {
+    line-height: 2rem;
+    letter-spacing: 2px;
+    text-transform: capitalize;
+    box-sizing: border-box;
+    width: 355px;
+  }
+  #offer .book_description {
+    margin-top: 1.5rem;
+  }
+  .staff {
+    font-size: 1rem;
+    font-family: var(--font-header);
+    margin-top: 0.5rem;
+  }
+  .staff::after {
+    content: '';
+    margin-bottom: 1rem;
+    display: block;
+    width: 60px;
+    height: 1px;
+    background-color: var(--color-accent);
+  }
+  .book_title {
+    text-transform: uppercase;
+    margin-top: 1.5rem;
+  }
+  .own {
+    color: var(--color-accent);
+    border-color: var(--color-accent);
+  }
+  .book_cover {
+    position: absolute;
+    width: 200px;
+    height: 300px;
+    right: -2rem;
+    bottom: 0;
+  }
+  .bottom {
+    position: absolute;
+    bottom: 0.75rem;
+    left: 0.75rem;
+  }
+</style>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Brooklyn Public Library</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://fonts.googleapis.com/css?family=Inter&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Forum&display=swap" rel="stylesheet" />
+    <!-- prettier-ignore -->
+    <link rel="icon" href="data:image/svg+xml,%3Csvg%20viewBox='0%200%2064%2064'%20font-size='56'%20font-family='Arial'%20font-weight='400'%20xmlns='http://www.w3.org/2000/svg'%3E%3Crect%20width='64'%20height='64'%20rx='12'%20fill='peru'/%3E%3Ctext%20y='52'%20x='2'%20textLength='60'%20lengthAdjust='spacingAndGlyphs'%20fill='black'%3EBPL%3C/text%3E%3C/svg%3E" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+    <header>
+      <wrapper-tmpl include="./templates/sections/header.tmpl"></wrapper-tmpl>
+    </header>
+    <main>
+      <!-- sections -->
+      <wrapper-tmpl include="./templates/sections/welcome.tmpl"></wrapper-tmpl>
+      <wrapper-tmpl include="./templates/sections/about.tmpl"></wrapper-tmpl>
+      <wrapper-tmpl include="./templates/sections/favorites.tmpl"></wrapper-tmpl>
+      <wrapper-tmpl include="./templates/sections/coffe-shop.tmpl"></wrapper-tmpl>
+      <wrapper-tmpl include="./templates/sections/contacts.tmpl"></wrapper-tmpl>
+      <wrapper-tmpl include="./templates/sections/card.tmpl"></wrapper-tmpl>
+      <!-- modals -->
+      <wrapper-tmpl include="./templates/modals/login.tmpl"></wrapper-tmpl>
+      <wrapper-tmpl include="./templates/modals/register.tmpl"></wrapper-tmpl>
+      <wrapper-tmpl include="./templates/modals/profile.tmpl"></wrapper-tmpl>
+      <wrapper-tmpl include="./templates/modals/buy-card.tmpl"></wrapper-tmpl>
+    </main>
+    <footer>
+      <wrapper-tmpl include="./templates/sections/footer.tmpl"></wrapper-tmpl>
+    </footer>
+
+    <script type="module">
+      import render from './utils/templator.js'
+      render()
+    </script>
+    <script type="module" src="./script.js"></script>
+  </body>
+</html>

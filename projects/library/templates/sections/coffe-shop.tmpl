@@ -1,0 +1,133 @@
+<section id="coffe-shop">
+  <h2>Coffee Shop</h2>
+  <p>
+    In our library, we have of cozy coffee shop, welcoming in customers with frothy cappuccinos and friendly conversation. You can get a favorite book and read
+    in coffee shop. Our barista to cook you best coffee, and also you can try desserts from bakery.
+  </p>
+  <wrap-shop-category>
+    <div id="shop-category" class="drinks">
+      <h3>Coffee & Tea</h3>
+      <ul>
+        <li>
+          <span>Cold Brew Coffee</span>
+          <span class="shop_price">$3</span>
+        </li>
+        <li>
+          <span>French Press Pot</span>
+          <span class="shop_price">$5</span>
+        </li>
+        <li>
+          <span>Espresso</span>
+          <span class="shop_price">$2</span>
+        </li>
+        <li>
+          <span>Cappuccino</span>
+          <span class="shop_price">$4</span>
+        </li>
+        <li>
+          <span>Hot Tea</span>
+          <span class="shop_price">$2</span>
+        </li>
+        <li>
+          <span>Cold Tea</span>
+          <span class="shop_price">$2</span>
+        </li>
+      </ul>
+    </div>
+
+    <div id="shop-category" class="desserts">
+      <h3>Desserts & Cakes</h3>
+      <ul>
+        <li>
+          <span>Forest Gateau</span>
+          <span class="shop_price">$16</span>
+        </li>
+        <li>
+          <span>Blue Moon</span>
+          <span class="shop_price">$16</span>
+        </li>
+        <li>
+          <span>Truffle Cake</span>
+          <span class="shop_price">$15</span>
+        </li>
+        <li>
+          <span>Chocolate Cake</span>
+          <span class="shop_price">$18</span>
+        </li>
+        <li>
+          <span>Poet's Dream Cake</span>
+          <span class="shop_price">$16</span>
+        </li>
+        <li>
+          <span>Pineapple Cake</span>
+          <span class="shop_price">$14</span>
+        </li>
+      </ul>
+    </div>
+  </wrap-shop-category>
+</section>
+
+<style>
+  #coffe-shop p {
+    text-align: center;
+    letter-spacing: 2px;
+    line-height: 2rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+  wrap-shop-category {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 0 1rem;
+  }
+  #coffe-shop ul {
+    padding: 0;
+  }
+  #coffe-shop li {
+    padding: 1rem 0;
+    list-style-type: none;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    letter-spacing: 2px;
+    line-height: 2rem;
+  }
+  #shop-category {
+    box-sizing: border-box;
+  }
+  .drinks {
+    width: 440px;
+  }
+  .desserts {
+    width: 480px;
+    margin-left: auto;
+    margin-right: 0;
+  }
+  .desserts h3 {
+    text-align: right;
+  }
+  #shop-category h3 {
+    margin: 1rem 0;
+  }
+  .desserts li :nth-child(1) {
+    width: calc(100% - 12.5rem);
+    text-align: right;
+  }
+  .shop_price {
+    position: relative;
+    font-family: var(--font-header);
+    line-height: 2rem;
+    letter-spacing: 2px;
+  }
+  .shop_price::after {
+    position: absolute;
+    content: '';
+    display: block;
+    background-color: var(--color-accent);
+    width: 5rem;
+    height: 1px;
+    right: 4rem;
+    top: 0.6rem;
+  }
+</style>

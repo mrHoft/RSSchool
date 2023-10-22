@@ -1,0 +1,123 @@
+<section id="about">
+  <h2>About</h2>
+  <p>The Brooklyn Library is a free workspace, a large number of books and a cozy coffee shop inside</p>
+  <div id="galery">
+    <div class="slider_arrow disabled"><img src="./assets/icons/arrow_l.svg" /></div>
+    <div id="carousel">
+      <div class="items-container">
+        <div class="item"><img src="./assets/images/image_1.png" alt="galery" /></div>
+        <div class="item"><img src="./assets/images/image_2.png" alt="galery" /></div>
+        <div class="item"><img src="./assets/images/image_3.png" alt="galery" /></div>
+        <div class="item"><img src="./assets/images/image_4.png" alt="galery" /></div>
+        <div class="item"><img src="./assets/images/image_5.png" alt="galery" /></div>
+      </div>
+    </div>
+    <div class="slider_arrow"><img src="./assets/icons/arrow_r.svg" /></div>
+  </div>
+  <div id="slider">
+    <button class="dot_button own"><div class="dot_button_inner"></div></button>
+    <button class="dot_button"><div class="dot_button_inner"></div></button>
+    <button class="dot_button"><div class="dot_button_inner"></div></button>
+    <button class="dot_button"><div class="dot_button_inner"></div></button>
+    <button class="dot_button"><div class="dot_button_inner"></div></button>
+  </div>
+</section>
+
+<style>
+  .slider_arrow {
+    font-weight: bold;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    width: 1.2rem;
+    padding-top: 1.5rem;
+    cursor: pointer;
+  }
+  .slider_arrow.disabled {
+    cursor: default;
+  }
+  .slider_arrow:not(.disabled):hover {
+    filter: brightness(0) saturate(100%) invert(66%) sepia(41%) saturate(411%) hue-rotate(355deg) brightness(85%) contrast(90%);
+  }
+  #galery .slider_arrow:first-child {
+    padding-right: 1.5rem;
+  }
+  #galery .slider_arrow:last-child {
+    padding-left: 1.5rem;
+  }
+  #about {
+    padding: 0 1rem;
+  }
+  #about h2 {
+    margin-top: 1rem;
+  }
+  #about p {
+    font-family: var(--font-main);
+    text-align: center;
+    padding: 0 1rem;
+    line-height: 2rem;
+  }
+  #galery {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    column-gap: 1.25rem;
+    justify-content: center;
+  }
+  #carousel {
+    position: relative;
+    overflow: hidden;
+    width: 1400px;
+  }
+  .dot_button:nth-child(n + 4) {
+    display: none;
+  }
+  @media (max-width: 1400px) {
+    #carousel {
+      width: 450px;
+    }
+    .slider_arrow {
+      display: flex;
+    }
+    .dot_button:nth-child(n + 4) {
+      display: block;
+    }
+  }
+  #carousel .items-container {
+    width: 100%;
+    position: relative;
+    display: flex;
+    column-gap: 1.25rem;
+  }
+  #carousel .item {
+    position: relative;
+    background-color: black;
+    width: 450px;
+    height: 560px;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  #slider {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+  }
+  .dot_button {
+    width: 26px;
+    height: 26px;
+    border: none;
+    outline: none;
+    background-color: transparent;
+  }
+  .dot_button_inner {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background-color: black;
+    transition: 0.3s linear;
+  }
+  .own .dot_button_inner {
+    background-color: #bb945f;
+  }
+</style>
