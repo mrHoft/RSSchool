@@ -1,0 +1,24 @@
+{
+  "name": "brackets",
+  "version": "1.0.0",
+  "description": "Brackets",
+  "author": "mrHoft",
+  "contributes": "yankouskia",
+  "homepage": "https://github.com/mrHoft/RSSchool",
+  "license": "ISC",
+  "main": "test.js",
+  "scripts": {
+    "test": "mocha test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:mrHoft/RSSchool.git"
+  },
+  "engines": {
+    "node": "16",
+    "npm": "8"
+  },
+  "devDependencies": {
+    "mocha": "^10.1.0"
+  }
+}
