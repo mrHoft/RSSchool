@@ -11,10 +11,10 @@
 
 ### Packages:
 
-- [brackets](https://github.com/mrHoft/RSSchool/packages/brackets)
-- [core-js-101](<(https://github.com/mrHoft/RSSchool/packages/core-js-101)>)
-- [guessing-game](https://github.com/mrHoft/RSSchool/packages/guessing-game)
-- [human-readable-number](https://github.com/mrHoft/RSSchool/packages/human-readable-number)
-- [morse-decoder](https://github.com/mrHoft/RSSchool/packages/morse-decoder)
-- [reverse-int](https://github.com/mrHoft/RSSchool/packages/reverse-int)
-- [towel-sort](https://github.com/mrHoft/RSSchool/packages/towel-sort)
+- [brackets](https://github.com/mrHoft/RSSchool/tree/main/packages/brackets)
+- [core-js-101](https://github.com/mrHoft/RSSchool/tree/main/packages/core-js-101)
+- [guessing-game](https://github.com/mrHoft/RSSchool/tree/main/packages/guessing-game)
+- [human-readable-number](https://github.com/mrHoft/RSSchool/tree/main/packages/human-readable-number)
+- [morse-decoder](https://github.com/mrHoft/RSSchool/tree/main/packages/morse-decoder)
+- [reverse-int](https://github.com/mrHoft/RSSchool/tree/main/packages/reverse-int)
+- [towel-sort](https://github.com/mrHoft/RSSchool/tree/main/packages/towel-sort)
