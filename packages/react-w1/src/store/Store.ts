@@ -11,7 +11,7 @@ export default class Store {
     if (Store._instance) return Store._instance;
     const savedState = localStorage.getItem(Store.STORE_NAME);
     if (savedState) {
-      this._state = JSON.parse(savedState);
+      this._state = JSON.parse(savedState) as Indexed;
     }
     Store._instance = this;
   }
@@ -56,7 +56,7 @@ function setValue(object: Indexed, path: string, value: unknown) {
 function getValue(object: Indexed, path: string): unknown {
   if (object !== Object(object) || typeof path !== 'string' || path === '') {
     console.warn('App store. Wrong:', path);
-    return object;
+    return '';
   }
   return path.split('.').reduce((obj, key) => (obj[key] !== undefined ? (obj[key] as Indexed) : obj), object);
 }

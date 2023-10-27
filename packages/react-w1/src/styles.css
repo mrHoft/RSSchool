@@ -52,6 +52,10 @@ button:hover {
   border-color: gray;
 }
 
+.align_center {
+  text-align: center;
+}
+
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;

@@ -1,27 +1,66 @@
 import React from 'react';
-import { ErrorBoundary } from './components/ErrorBoundary';
 import { Search } from './components/search/Search';
+import { Request } from './api/Request';
+import { SearchResults } from './components/searchResults/Results';
+import { ErrorComponent } from './components/ErrorComponent';
 
-class App extends React.Component {
+interface State {
+  status?: string;
+  count?: number;
+  results: Record<string, string | number>[];
+  category?: string;
+  throwError: boolean;
+}
+
+class App extends React.Component<void> {
+  state: State = {
+    status: `Use one of folowing: "people", "planets", "films", "species", "vehicles", "starships"`,
+    results: [],
+    throwError: false,
+  };
+
+  constructor() {
+    super();
+    this.updateState = this.updateState.bind(this);
+  }
+
   componentDidMount(): void {
     console.log('Main page first mount');
   }
 
-  render(): JSX.Element {
+  updateState(query: string) {
+    this.setState({ status: `Searching for "${query}"...` });
+    Request(query)
+      .then((response) => {
+        // console.log(response);
+        this.setState(() => {
+          return { status: undefined, ...response, category: query };
+        });
+      })
+      .catch((err) => console.warn(err));
+  }
+
+  render() {
     return (
-      <ErrorBoundary>
+      <>
         <div>
-          <Search />
+          <Search callback={this.updateState.bind(this)} />
         </div>
         <div>
+          {this.state.status ? <p>{this.state.status}</p> : null}
+          {this.state.count ? <p>Total: {this.state.count}</p> : null}
+          <SearchResults results={this.state.results} category={this.state.category} />
+        </div>
+        <div className="align_center">
           <button
             onClick={() => {
-              throw new Error('Test Error');
+              this.setState((prev) => ({ ...prev, throwError: true }));
             }}>
             Throw Error
           </button>
         </div>
-      </ErrorBoundary>
+        {this.state.throwError ? <ErrorComponent /> : null}
+      </>
     );
   }
 }

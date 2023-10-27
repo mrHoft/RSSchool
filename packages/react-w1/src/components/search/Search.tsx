@@ -1,12 +1,18 @@
 import React from 'react';
 import styles from './.module.css';
+import Store from '../../store/Store';
 
-type TSearchProps = {
+const store = new Store();
+let lastSearch = store.get('lastSearch');
+if (typeof lastSearch !== 'string') lastSearch = '';
+
+interface SearchProps {
   mode?: 'static' | 'dynamic';
-};
+  callback: (query: string) => void;
+}
 
-export const Search = ({ mode = 'static' }: TSearchProps) => {
-  const [value, setValue] = React.useState<string>('');
+export const Search = ({ callback, mode = 'static' }: SearchProps) => {
+  const [value, setValue] = React.useState<string>(lastSearch as string);
 
   const changeHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
     setValue(event.target.value);
@@ -15,8 +21,9 @@ export const Search = ({ mode = 'static' }: TSearchProps) => {
   const submitHandler = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     if (value) {
-      console.log(value);
+      store.set('lastSearch', value);
     }
+    callback(value);
   };
 
   return (

@@ -1,48 +1,32 @@
-import { Component, ErrorInfo, ReactNode } from 'react';
+import { Component, ReactNode } from 'react';
 
-type Props = {
+interface Props {
   children: ReactNode;
-};
+}
 
-type State = {
+interface State {
   error: Error | null;
-  errorInfo: ErrorInfo | null;
-  hasError?: boolean | null;
-};
+}
 
 export class ErrorBoundary extends Component<Props, State> {
   constructor(props: Props) {
     super(props);
     this.state = {
       error: null,
-      errorInfo: null,
-      hasError: null,
     };
   }
 
   static getDerivedStateFromError(error: Error) {
     console.log('We did catch', error);
-    return { hasError: true };
-  }
-
-  componentDidCatch(error: Error, errorInfo: ErrorInfo) {
-    console.log('Error:', errorInfo.componentStack);
-    this.setState({
-      error: error,
-      errorInfo: errorInfo,
-    });
+    return { error };
   }
 
   render() {
-    if (this.state.errorInfo) {
+    if (this.state.error) {
       return (
         <div>
           <h2>Seems like an error occured!</h2>
-          <details style={{ whiteSpace: 'pre-wrap' }}>
-            {this.state.error && this.state.error.toString()}
-            <br />
-            {this.state.errorInfo.componentStack}
-          </details>
+          <details style={{ whiteSpace: 'pre-wrap' }}>{this.state.error.toString()}</details>
         </div>
       );
     }
