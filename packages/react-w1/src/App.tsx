@@ -12,15 +12,15 @@ interface State {
   throwError: boolean;
 }
 
-class App extends React.Component<void> {
+class App extends React.Component {
   state: State = {
     status: `Use one of folowing: "people", "planets", "films", "species", "vehicles", "starships"`,
     results: [],
     throwError: false,
   };
 
-  constructor() {
-    super();
+  constructor(props = {}) {
+    super(props);
     this.updateState = this.updateState.bind(this);
   }
 
@@ -32,7 +32,6 @@ class App extends React.Component<void> {
     this.setState({ status: `Searching for "${query}"...` });
     Request(query)
       .then((response) => {
-        // console.log(response);
         this.setState(() => {
           return { status: undefined, ...response, category: query };
         });

@@ -1,5 +1,3 @@
-// JSON.parse(localStorage.getItem('ReactW1Store'))
-
 type Indexed = { [key in string | symbol]: unknown };
 
 export default class Store {
