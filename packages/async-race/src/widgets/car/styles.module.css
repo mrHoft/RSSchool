@@ -1,0 +1,74 @@
+@media screen and (min-width: 640px) {
+  .editor {
+    display: flex;
+  }
+}
+
+.editor__props,
+.editor__buttons {
+  margin: 1em 0.5em;
+  display: flex;
+  column-gap: 1em;
+  justify-content: center;
+}
+
+.editor__name {
+  outline: none;
+  width: 12em;
+  height: 2em;
+  color: var(--color100);
+  border: 2px solid var(--color40);
+  background-color: var(--color20);
+  border-radius: 4px;
+}
+
+.editor__color {
+  position: relative;
+  width: 3em;
+  height: 2em;
+  box-sizing: border-box;
+  background-image: url('./image/color-palette.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 1.5em;
+  border: 2px solid var(--color40);
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.editor__color_picker {
+  position: absolute;
+  top: 3em;
+  width: 175px;
+  height: 175px;
+  padding: 2px;
+  border: 2px solid var(--color40);
+  border-radius: 4px;
+  z-index: 10;
+  transform: translateX(calc(-91.5px + 1.5em));
+}
+.editor__color_picker_hide {
+  animation: hide 0.15s linear forwards;
+}
+@keyframes hide {
+  to {
+    opacity: 0;
+  }
+}
+.editor__color_picker_show {
+  animation: show 0.15s linear forwards;
+}
+@keyframes show {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.editor__btn {
+  box-sizing: border-box;
+  height: 2rem;
+  margin: unset !important;
+}

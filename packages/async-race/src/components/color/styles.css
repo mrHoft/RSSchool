@@ -1,0 +1,70 @@
+.picker {
+  user-select: none;
+  position: relative;
+}
+
+.picker__saturation {
+  position: relative;
+  height: 100%;
+  background: linear-gradient(to right, #ffffff, #ff0000);
+  float: left;
+  margin-right: 5px;
+}
+
+.picker__brightness {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(rgba(255, 255, 255, 0), rgba(0, 0, 0, 1));
+}
+
+.picker__pointer {
+  border: 2px solid white;
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  background: white;
+  border-radius: 10px;
+  top: -7px;
+  left: -7px;
+  box-sizing: border-box;
+  z-index: 10;
+}
+
+.picker__hue {
+  width: 20px;
+  height: 100%;
+  position: relative;
+  float: left;
+  background: linear-gradient(
+    rgb(255, 0, 0) 0%,
+    rgb(255, 0, 255) 17%,
+    rgb(0, 0, 255) 34%,
+    rgb(0, 255, 255) 50%,
+    rgb(0, 255, 0) 67%,
+    rgb(255, 255, 0) 84%,
+    rgb(255, 0, 0) 100%
+  );
+}
+
+.picker__selector {
+  position: absolute;
+  background: white;
+  border-bottom: 1px solid black;
+  right: -3px;
+  width: 10px;
+  height: 2px;
+}
+
+.picker__values {
+  height: 23px;
+  margin-top: 2px;
+  background-color: var(--color20);
+}
+
+.picker__rgb {
+  padding-top: 2px;
+  text-align: center;
+  font-size: 14px;
+  font-family: 'Helvetica', Arial, sans-serif;
+  color: var(--color1000);
+}

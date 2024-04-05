@@ -1,0 +1,30 @@
+.header__logo {
+  position: relative;
+  display: flex;
+  align-items: center;
+  column-gap: 1em;
+
+  cursor: pointer;
+  transition: opacity 0.25s linear;
+}
+.header__logo:hover {
+  opacity: 0.65;
+}
+
+@media screen and (max-width: 640px) {
+  .header__logo_img {
+    position: absolute;
+    filter: sepia(30%) saturate(7500%) hue-rotate(357deg);
+  }
+}
+
+.header__title {
+  margin: 0;
+  color: var(--color00);
+  -webkit-text-stroke: 1px var(--color100);
+  z-index: 1;
+}
+
+.header__menu {
+  display: flex;
+}

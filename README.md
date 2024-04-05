@@ -1,6 +1,6 @@
 ## Projects for RSSchool
 
-### Deployed solutions:
+### Deployed projects:
 
 - [Audio player](https://mrhoft.github.io/RSSchool/audio-player/)
 - [Eco sounds](https://mrhoft.github.io/RSSchool/eco-sounds/)
@@ -18,3 +18,4 @@
 - [morse-decoder](https://github.com/mrHoft/RSSchool/tree/main/packages/morse-decoder)
 - [reverse-int](https://github.com/mrHoft/RSSchool/tree/main/packages/reverse-int)
 - [towel-sort](https://github.com/mrHoft/RSSchool/tree/main/packages/towel-sort)
+- [async-race](https://github.com/mrHoft/RSSchool/tree/main/packages/async-race)

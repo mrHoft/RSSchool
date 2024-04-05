@@ -1,0 +1,45 @@
+.winners__title {
+  display: flex;
+  column-gap: 2em;
+  align-items: baseline;
+  justify-content: center;
+}
+
+.winners__table {
+  max-width: 40em;
+  border-spacing: unset;
+}
+
+.winners__table thead {
+  text-align: center;
+  background-color: var(--color30);
+}
+
+.winners__table tbody {
+  text-align: center;
+}
+
+.winners__table td {
+  padding: 0 1em;
+  border-bottom: 1px solid gray;
+}
+
+.winners__order {
+  cursor: pointer;
+}
+.winners__order:hover {
+  transition: background-color 0.25s;
+  background-color: var(--color40);
+}
+.winners__order.sort {
+  background-color: var(--color40);
+}
+.winners__order.sort::after {
+  content: attr(data-order);
+}
+
+.winners__pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 1em;
+}

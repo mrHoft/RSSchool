@@ -1,0 +1,129 @@
+.track__race {
+  margin: 0 auto 1em;
+  display: flex;
+  column-gap: 1em;
+}
+.track__race .button {
+  margin: unset;
+}
+
+.track__row {
+  width: 100%;
+  border-bottom: 2px dashed gray;
+  margin-top: 0.5em;
+}
+
+.track__car_info {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.track__car_name {
+  width: 12em;
+}
+
+.track__car_ctrls {
+  display: inline;
+}
+
+.track__car_dummy {
+  width: 12em;
+}
+
+.track__car_btn {
+  position: relative;
+  padding: 2px;
+  margin-left: 1em;
+  width: 2em;
+  height: 2em;
+  border: 2px solid var(--color40);
+  border-radius: 4px;
+  background-color: var(--color50);
+  cursor: pointer;
+  transition: all 0.25s linear;
+}
+.track__car_btn:hover {
+  background-color: var(--color60);
+  border-color: var(--color50);
+}
+.track__car_btn:disabled {
+  pointer-events: none;
+  background-color: var(--color30);
+}
+
+.track__car_btn .loading {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: calc(2em - 8px);
+  height: calc(2em - 8px);
+  display: none;
+  -webkit-animation: spin 1s infinite linear;
+  animation: spin 1s infinite linear;
+}
+.track__car_btn.loading .loading {
+  display: unset;
+}
+
+@keyframes spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+.track__car {
+  position: relative;
+  width: 96px;
+  height: 32px;
+}
+.track__car::after {
+  content: '';
+  display: none;
+  position: absolute;
+  right: 5%;
+  top: 0;
+  height: 40%;
+  aspect-ratio: 8/10;
+  background-image: url('./image/smoke2.gif');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.track__car.broken {
+  animation-play-state: paused !important;
+}
+.track__car.broken::after {
+  display: block;
+}
+.track__car.stop {
+  margin-left: calc(max(0px, var(--tl) - 96px));
+}
+.track__car.drive {
+  -webkit-animation: move var(--t) linear forwards;
+  animation: move var(--t) linear forwards;
+}
+.track__car.fly {
+  -webkit-animation: fly 0.35s linear forwards;
+  animation: fly 0.35s linear forwards;
+}
+
+@keyframes move {
+  100% {
+    margin-left: calc(max(0px, 100% - 96px));
+  }
+}
+
+@keyframes fly {
+  to {
+    transform: translate(var(--d));
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .track__row {
+    font-size: 12px;
+  }
+  .track__car_btn {
+    margin-left: 0.5em;
+  }
+}
