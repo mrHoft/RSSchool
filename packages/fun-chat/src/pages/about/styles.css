@@ -1,0 +1,25 @@
+.home {
+  width: 100%;
+  max-width: 50em;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.home__wrap {
+  width: 100%;
+  display: flex;
+}
+
+.home__about {
+  width: 85%;
+}
+
+.home__about h1 {
+  text-align: center;
+}
+
+.home__img {
+  width: 15%;
+  aspect-ratio: 23/64;
+}

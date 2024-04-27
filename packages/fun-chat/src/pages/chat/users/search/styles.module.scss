@@ -1,0 +1,41 @@
+.chat__search {
+  flex-shrink: 0;
+  width: 100%;
+  height: 3em;
+  display: flex;
+  background-color: var(--color20);
+  border-bottom: 1px solid black;
+}
+
+.chat__search_field {
+  border: none;
+  outline: none;
+  margin-left: 0.5em;
+  color: inherit;
+  background-color: inherit;
+  font-size: 1em;
+  flex-grow: 1;
+}
+
+.chat__search_btn {
+  padding: 0;
+  border: none;
+  outline: none;
+  transition: opacity 0.25s linear;
+  background-color: inherit;
+  margin-right: 1em;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.65;
+  }
+}
+
+.chat__search_img-clear {
+  width: 1em;
+  height: 1em;
+}
+.chat__search_img-search {
+  width: 1.5em;
+  height: 1.5em;
+}

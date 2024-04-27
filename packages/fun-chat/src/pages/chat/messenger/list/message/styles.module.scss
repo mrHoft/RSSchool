@@ -1,0 +1,85 @@
+.message__in,
+.message__out {
+  position: relative;
+  padding: 0.5em;
+  margin-top: 0.5em;
+  min-width: 10em;
+  max-width: calc(100% - 3em);
+
+  & p {
+    margin: 0;
+    word-wrap: break-word;
+  }
+
+  & ul {
+    margin: 0;
+  }
+}
+
+.message__out {
+  margin-left: auto;
+  margin-right: 0;
+  border-radius: 1em 5px 0 1em;
+  padding-bottom: 1em;
+  background-color: var(--color30);
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: -8px;
+    border-width: 4px;
+    border-style: solid;
+    border-color: transparent transparent var(--color30) var(--color30);
+  }
+}
+
+.message__in {
+  margin-left: 0em;
+  margin-right: auto;
+  border-radius: 5px 1em 1em 0;
+  background-color: var(--color20);
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: -8px;
+    border-width: 4px;
+    border-style: solid;
+    border-color: transparent var(--color20) var(--color20) transparent;
+  }
+}
+
+.message__header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  column-gap: 1em;
+}
+
+.message__from {
+  display: inline;
+  color: #888;
+}
+
+.message__date {
+  display: inline;
+  color: #59d;
+}
+
+.message__status {
+  position: absolute;
+  right: 0.5em;
+  bottom: 0.1em;
+  width: 1.25em;
+  height: 1.25em;
+}
+
+.message__edited {
+  color: #59d;
+  font-size: 0.8em;
+  position: absolute;
+  right: 2.5em;
+  bottom: 0.1em;
+}

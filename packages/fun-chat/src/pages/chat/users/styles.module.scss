@@ -1,0 +1,15 @@
+.chat__left {
+  width: 30%;
+  height: 100%;
+  max-height: calc(100dvh - 6em);
+  background-color: var(--color20);
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid black;
+}
+
+.chat__users {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}

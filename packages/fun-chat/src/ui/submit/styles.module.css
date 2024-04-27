@@ -1,0 +1,47 @@
+.form__submit {
+  align-self: center;
+  margin-top: 0.5em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 2.5em;
+  width: 10em;
+  column-gap: 0.5em;
+  border-radius: 0.75em;
+  border: 1px solid var(--color40);
+  background-color: var(--color30);
+  color: var(--color100);
+  outline: none;
+  transition:
+    border-color,
+    background-color 0.25s linear;
+  cursor: pointer;
+}
+.form__submit:focus {
+  outline: none;
+}
+.form__submit:hover {
+  border-color: var(--color50);
+  background-color: var(--color40);
+}
+.form__submit_disabled,
+.form__submit_loading {
+  pointer-events: none;
+  background-color: var(--color20);
+}
+.form__submit_loading::before {
+  content: '';
+  width: 1em;
+  height: 1em;
+  margin-left: -2em;
+  margin-right: 1em;
+  background-image: url('./icons/loading.svg');
+  background-size: cover;
+  animation: spin 0.5s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotateZ(360deg);
+  }
+}

@@ -1,0 +1,63 @@
+.theme {
+  position: relative;
+  appearance: none;
+  box-sizing: content-box;
+  padding: 2px;
+  width: 2.2em;
+  height: 1.1em;
+  border-radius: 1em;
+  background-color: var(--color50);
+
+  &::before {
+    content: '';
+    position: absolute;
+    width: 1em;
+    height: 1em;
+    top: calc(0.05em + 2px);
+    left: calc(0.05em + 2px);
+    background-repeat: no-repeat;
+    background-image: url('./icons/crescent-moon.svg');
+    background-size: 1em;
+    z-index: 0;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    width: 1em;
+    height: 1em;
+    top: calc(0.05em + 2px);
+    right: calc(0.05em + 2px);
+    background-repeat: no-repeat;
+    background-image: url('./icons/sun-shape.svg');
+    background-size: 1em;
+    z-index: 0;
+  }
+}
+
+.theme__switcher {
+  position: absolute;
+  margin: 0;
+  outline: none;
+  appearance: none;
+  font-size: 1em;
+  width: 2.2em;
+  height: 1.1em;
+  cursor: pointer;
+  z-index: 1;
+
+  &::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 1.1em;
+    height: 1.1em;
+    border-radius: 1em;
+    background-color: var(--color30);
+    transition: transform 0.2s linear;
+  }
+
+  &:checked::after {
+    transform: translateX(1.1em);
+  }
+}

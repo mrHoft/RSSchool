@@ -1,0 +1,40 @@
+.header__logo {
+  position: relative;
+  display: flex;
+  align-items: center;
+  column-gap: 1em;
+
+  cursor: pointer;
+  transition: opacity 0.25s linear;
+}
+.header__logo:hover {
+  opacity: 0.65;
+}
+
+@media screen and (max-width: 640px) {
+  .header__logo_img {
+    position: absolute;
+  }
+}
+
+.header__title {
+  margin: 0;
+  color: var(--color00);
+  -webkit-text-stroke: 1px var(--color100);
+  z-index: 1;
+}
+
+.header__menu {
+  display: flex;
+  column-gap: 1em;
+}
+
+@media screen and (max-width: 500px) {
+  .header__title {
+    font-size: 1em;
+  }
+
+  .header__menu {
+    font-size: smaller;
+  }
+}

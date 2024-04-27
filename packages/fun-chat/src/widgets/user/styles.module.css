@@ -1,0 +1,30 @@
+.user {
+  display: flex;
+  justify-content: center;
+  column-gap: 0.5em;
+}
+
+.user__avatar {
+  width: 1.5em;
+  height: 1.5em;
+  border-radius: 20%;
+  background-color: var(--color50);
+}
+
+.user__btn {
+  width: 1.5em;
+  height: 1.5em;
+  border-radius: 50%;
+  background-color: var(--color50);
+  transition: background-color 0.25s linear;
+  cursor: pointer;
+}
+.user__btn:hover {
+  background-color: var(--color40);
+}
+
+.user__btn_img {
+  width: 1.1em;
+  height: 1.1em;
+  margin: 0.2em;
+}

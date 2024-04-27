@@ -1,0 +1,6 @@
+*.md
+*-lock.yaml
+*-lock.json
+dist
+public/data
+chatbot.cjs

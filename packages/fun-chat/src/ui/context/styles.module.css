@@ -1,0 +1,25 @@
+.context__menu {
+  position: absolute;
+  box-sizing: border-box;
+  width: 120px;
+  background-color: var(--color20);
+  padding: 1em;
+  transform: translateY(-100%);
+}
+
+.context__menu_list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.context__menu_item {
+  display: flex;
+  align-items: center;
+  column-gap: 0.5em;
+  cursor: pointer;
+}
+
+.context__menu_item:hover {
+  background-color: var(--color30);
+}

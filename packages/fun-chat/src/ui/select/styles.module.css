@@ -1,0 +1,26 @@
+.form__select_container {
+  margin-top: 0.5em;
+}
+
+.form__select_label {
+  pointer-events: none;
+  margin-left: 1em;
+  opacity: 0.7;
+}
+
+.form__select {
+  font-size: 1em;
+  height: 3em;
+  width: 100%;
+  border-radius: 0.5em;
+  padding: 0 1.75em 0 1em;
+  outline: none;
+  border: 1px solid var(--color30);
+  background-color: var(--color10);
+  color: var(--color100);
+  -webkit-text-fill-color: var(--color100);
+  transition: border-color 0.25s;
+}
+.form__select:hover {
+  border-color: var(--color50);
+}

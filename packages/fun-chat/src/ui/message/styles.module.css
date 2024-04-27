@@ -1,0 +1,36 @@
+.message__wrapper {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  font-family: var(--font-arial);
+  transform: translateX(-50%);
+  background-color: var(--color30);
+  border-radius: 0.5em;
+  padding: 0.25em 1em 0.25em 0.25em;
+  box-shadow:
+    0px 3px 5px rgba(0, 0, 0, 0.4),
+    3px 0px 5px rgba(0, 0, 0, 0.4);
+  animation: slide-down 1s forwards;
+
+  display: flex;
+  column-gap: 1em;
+  align-items: center;
+}
+
+@keyframes slide-down {
+  from {
+    top: 0;
+  }
+  to {
+    top: 4em;
+  }
+}
+
+.message__icon {
+  text-align: center;
+  font-size: 12px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: green;
+}

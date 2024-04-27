@@ -1,0 +1,35 @@
+{
+  "name": "fun-chat",
+  "description": "Fun chat app",
+  "version": "0.0.2",
+  "author": {
+    "name": "mrHoft"
+  },
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite --port 3000",
+    "build": "rm -rf dist && tsc && vite build",
+    "deploy": "rm -rf dist && tsc && vite build && git checkout gh-pages && cd .. && rm -rf fun-chat && cp -r chat/dist fun-chat && git add . && git commit -m 'feat(chat): deploy' && git push && git checkout chat",
+    "lines": "git ls-files | xargs cat | wc -l",
+    "preview": "vite preview",
+    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives",
+    "prettier": "prettier . --check",
+    "prettier:fix": "prettier . --write",
+    "prepare": "husky"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.24",
+    "@typescript-eslint/eslint-plugin": "^7.0.2",
+    "@typescript-eslint/parser": "^7.0.2",
+    "eslint": "^8.57.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.29.1",
+    "husky": "^9.0.11",
+    "prettier": "3.2.5",
+    "prettier-plugin-organize-imports": "^3.2.4",
+    "sass": "^1.74.1",
+    "typescript": "^5.2.2",
+    "vite": "^5.2.0"
+  }
+}

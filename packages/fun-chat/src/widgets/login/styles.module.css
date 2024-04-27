@@ -1,0 +1,11 @@
+.login__form {
+  width: 20em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.login__message {
+  color: red;
+  height: 1em;
+}

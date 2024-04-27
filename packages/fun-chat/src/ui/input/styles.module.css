@@ -1,0 +1,60 @@
+.form__input_container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  border-radius: 0.5em;
+  padding: 0 1.75em 0 1em;
+  height: 3em;
+  width: 100%;
+  box-sizing: border-box;
+  margin-top: 0.5em;
+  border: 1px solid var(--color30);
+  background-color: var(--color10);
+  color: var(--color100);
+  transition: border-color 0.25s;
+}
+.form__input_container:hover {
+  border-color: var(--color50);
+}
+
+.form__input {
+  outline: none;
+  border: none;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  color: inherit;
+  -webkit-text-fill-color: var(--color100);
+  background-color: inherit;
+}
+
+.form__input:valid ~ .form__input_valid {
+  display: block;
+}
+
+.form__input_valid {
+  display: none;
+  position: absolute;
+  color: green;
+  top: 0.75em;
+  right: 0.75em;
+}
+
+.form__input_label {
+  position: absolute;
+  pointer-events: none;
+  left: 1em;
+  top: 0.75em;
+  transition: 0.3s ease all;
+  color: inherit;
+  opacity: 0.7;
+}
+
+.form__input:focus ~ .form__input_label {
+  font-size: 0.8em;
+  top: 0;
+}
+.form__input:not(:placeholder-shown) ~ .form__input_label {
+  font-size: 0.8em;
+  top: 0;
+}

@@ -1,0 +1,25 @@
+.menu__list {
+  padding: 0;
+  list-style: none;
+  display: flex;
+  column-gap: 1em;
+}
+
+.menu__item {
+  position: relative;
+  font-size: 1.25em;
+  cursor: pointer;
+}
+.menu__item::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: var(--color100);
+  bottom: -2px;
+  transform: scaleX(0);
+  transition: transform 0.3s ease-in-out;
+}
+.menu__item:hover::before {
+  transform: scaleX(1);
+}
