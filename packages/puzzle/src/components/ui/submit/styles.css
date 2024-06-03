@@ -1,0 +1,28 @@
+.form__submit {
+  align-self: center;
+  margin-top: 0.5rem;
+  display: flex;
+  align-items: center;
+  height: 2.5rem;
+  padding: 0.5em 2em;
+  column-gap: 0.5rem;
+  border-radius: 0.5rem;
+  border: 1px solid var(--color30);
+  background-color: var(--color40);
+  color: var(--color100);
+  outline: none;
+  transition:
+    border,
+    background-color 0.25s linear;
+  cursor: pointer;
+}
+.form__submit:focus {
+  outline: none;
+}
+.form__submit:hover {
+  border: 1px solid var(--color40);
+  background-color: var(--color30);
+}
+.form__submit.disabled {
+  background-color: var(--color20);
+}

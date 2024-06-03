@@ -1,0 +1,3 @@
+cd puzzle
+npm run check-branch-name
+npm run lint

@@ -1,0 +1,49 @@
+.speech__btn {
+  position: relative;
+  width: 2em;
+  min-width: 2em;
+  height: 2em;
+  cursor: pointer;
+  color: var(--color100);
+  background-color: var(--color30);
+  border-radius: 0.25em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 0.25s linear;
+}
+.speech__btn:hover {
+  opacity: 0.65;
+}
+
+.speech__btn_icon {
+  position: absolute;
+  top: 0.35em;
+  left: 0.35em;
+  width: 1.3em;
+  height: 1.3em;
+}
+
+.speech__btn_active {
+  position: absolute;
+  top: 0.1em;
+  left: 0.1em;
+  width: 1.8em;
+  height: 1.8em;
+  -webkit-animation: spin 1s infinite linear;
+  animation: spin 1s infinite linear;
+}
+
+@keyframes spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .speech__btn_icon,
+  .speech__btn_active {
+    filter: invert(1);
+  }
+}

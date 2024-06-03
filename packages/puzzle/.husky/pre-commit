@@ -1,0 +1,2 @@
+cd puzzle
+npm run prettier

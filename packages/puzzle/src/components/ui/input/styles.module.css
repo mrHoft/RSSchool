@@ -1,0 +1,56 @@
+.form__input_container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  border-radius: 0.5rem;
+  padding: 0 1.75rem 0 1rem;
+  height: 3rem;
+  width: 100%;
+  box-sizing: border-box;
+  margin-top: 0.5rem;
+  border: 1px solid var(--color30);
+  background-color: var(--color15);
+  color: var(--color100);
+}
+
+.form__input {
+  outline: none;
+  border: none;
+  width: 100%;
+  margin-top: 1rem;
+  padding: 0;
+  color: inherit;
+  -webkit-text-fill-color: var(--color100);
+  background-color: inherit;
+}
+
+.form__input:valid ~ .form__input_valid {
+  display: block;
+}
+
+.form__input_valid {
+  display: none;
+  position: absolute;
+  color: green;
+  top: 0.75rem;
+  right: 0.75rem;
+}
+
+.form__input_label {
+  position: absolute;
+  pointer-events: none;
+  left: 1rem;
+  top: 0.75rem;
+  transition: 0.3s ease all;
+  color: inherit;
+  opacity: 0.7;
+}
+
+.form__input:focus ~ .form__input_label {
+  font-size: 0.8rem;
+  top: 0;
+}
+.form__input:not(:placeholder-shown) ~ .form__input_label {
+  font-size: 0.8rem;
+  top: 0;
+}

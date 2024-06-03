@@ -1,0 +1,18 @@
+.footer__author {
+  display: flex;
+  align-items: center;
+  column-gap: 1rem;
+}
+
+.footer__author_avatar {
+  width: 32px;
+  height: 24px;
+}
+
+.footer__rss_logo {
+  width: 5.4rem;
+  height: 2rem;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-image: url('./rss.svg');
+}

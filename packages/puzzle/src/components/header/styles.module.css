@@ -1,0 +1,24 @@
+.header__logo {
+  display: flex;
+  align-items: center;
+  column-gap: 1em;
+
+  cursor: pointer;
+  transition: opacity 0.25s linear;
+}
+.header__logo:hover {
+  opacity: 0.65;
+}
+
+.header__logo_img {
+  width: 2em;
+  height: 2em;
+}
+
+.header__title {
+  margin: 0;
+}
+
+.header__menu {
+  display: flex;
+}

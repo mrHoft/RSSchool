@@ -1,0 +1,42 @@
+.puzzle__source_btn {
+  text-align: center;
+  background-color: var(--color10);
+  border: 2px solid var(--color30);
+  border-radius: 1em;
+  padding: 0.5em 3em;
+  margin: 1em auto 0;
+  box-shadow:
+    0px 3px 5px rgba(0, 0, 0, 0.4),
+    3px 0px 5px rgba(0, 0, 0, 0.4);
+  animation: show 0.25s ease-out forwards;
+  transition: border 0.25s linear;
+  cursor: pointer;
+}
+.puzzle__source_btn.results {
+  background-color: var(--color30);
+  animation: unset;
+  width: 8em;
+}
+.puzzle__source_btn.ready {
+  background-color: #0d6b25;
+  animation: unset;
+  width: 8em;
+}
+.puzzle__source_btn.fail {
+  background-color: #6b0d0d;
+  animation: unset;
+  width: 8em;
+}
+.puzzle__source_btn:hover {
+  border: 2px solid var(--color50);
+}
+@keyframes show {
+  from {
+    width: 70%;
+    background-color: var(--color10);
+  }
+  to {
+    width: 8em;
+    background-color: var(--color30);
+  }
+}

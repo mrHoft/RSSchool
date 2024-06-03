@@ -1,0 +1,34 @@
+.user__menu {
+  position: relative;
+  width: 2em;
+  min-width: 2em;
+  height: 2em;
+  margin-left: 2em;
+  cursor: pointer;
+  color: var(--color100);
+  background-color: var(--color40);
+  border-radius: 0.25em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 0.25s linear;
+}
+.user__menu:hover {
+  opacity: 0.65;
+}
+
+.user__menu_icon {
+  position: absolute;
+  top: 0.25em;
+  left: 0.25em;
+  width: 1.5em;
+  height: 1.5em;
+}
+.user__menu_icon.opaque {
+  opacity: 0.3;
+}
+@media (prefers-color-scheme: dark) {
+  .user__menu_icon {
+    filter: invert(1);
+  }
+}

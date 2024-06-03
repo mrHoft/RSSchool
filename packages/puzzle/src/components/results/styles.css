@@ -1,0 +1,35 @@
+.results__title {
+  margin: 0;
+}
+
+.results__words_title,
+.results__descr,
+.results__level {
+  margin-block-start: unset;
+}
+
+.results__thumb {
+  width: 16em;
+  aspect-ratio: 1.5;
+  border-radius: 0.5em;
+  box-shadow:
+    0px 3px 5px rgba(0, 0, 0, 0.4),
+    3px 0px 5px rgba(0, 0, 0, 0.4);
+}
+
+.results__words {
+  min-width: 25em;
+  max-height: 20em;
+}
+
+.results__words_list {
+  padding: 0 0.5em;
+  list-style: none;
+}
+
+.results__words_item {
+  display: flex;
+  align-items: center;
+  column-gap: 0.5em;
+  margin: 0.5em 0;
+}

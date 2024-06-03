@@ -1,0 +1,40 @@
+.settings {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  column-gap: 1em;
+}
+
+.settings__item {
+  position: relative;
+  width: 2em;
+  min-width: 2em;
+  height: 2em;
+  cursor: pointer;
+  color: var(--color100);
+  background-color: gray;
+  border-radius: 0.25em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 0.25s linear;
+}
+.settings__item:hover {
+  opacity: 0.65;
+}
+.settings__item.active {
+  background-color: var(--color40);
+}
+
+.settings__icon {
+  position: absolute;
+  top: 0.25em;
+  left: 0.25em;
+  width: 1.5em;
+  height: 1.5em;
+}
+@media (prefers-color-scheme: dark) {
+  .settings__icon {
+    filter: invert(1);
+  }
+}

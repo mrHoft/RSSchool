@@ -1,0 +1,138 @@
+.puzzle {
+  width: min(80vw, calc(64dvh * 1.5));
+  overflow: hidden;
+}
+
+.puzzle__select {
+  display: flex;
+  column-gap: 1rem;
+  margin-bottom: 0.5em;
+}
+
+.puzzle__select_option.done {
+  color: green;
+}
+
+.puzzle__level:focus,
+.puzzle__page:focus {
+  outline: none;
+}
+
+.puzzle__body {
+  position: relative;
+  width: inherit;
+  aspect-ratio: 1.5;
+  background-color: var(--color15);
+  box-shadow:
+    0px 3px 5px rgba(0, 0, 0, 0.4),
+    3px 0px 5px rgba(0, 0, 0, 0.4);
+}
+
+.puzzle__row {
+  font-size: 1.4em;
+  font-weight: 600;
+  text-shadow:
+    1px 1px 5px var(--color00),
+    0px 0px 10px var(--color00);
+
+  height: 10%;
+  display: flex;
+  transition: background-color 0.35s ease-in-out;
+}
+.puzzle__row.complete {
+  background-size: var(--puzzle-size);
+  background-image: var(--puzzle-img);
+  background-repeat: no-repeat;
+}
+.puzzle__row.highlight {
+  background-color: #8886;
+}
+
+.puzzle__row_mark {
+  position: absolute;
+  height: 6%;
+  aspect-ratio: 1;
+  margin-left: -0.5em;
+  transform: translate(-100%, 30%);
+  border-radius: 50%;
+  background-color: var(--color20);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.4);
+}
+.puzzle__row_mark.complete {
+  background-color: var(--color40);
+}
+
+.puzzle__image_info {
+  margin-top: 0.5em;
+  text-align: end;
+}
+
+.puzzle__source_container {
+  width: inherit;
+}
+
+.puzzle__source {
+  font-size: 1.4em;
+  font-weight: 600;
+  text-shadow:
+    1px 1px 5px var(--color00),
+    0px 0px 10px var(--color00);
+
+  background-color: var(--color10);
+  border-radius: 1em;
+  display: flex;
+  justify-content: space-around;
+  margin-block-start: 1em;
+  padding: 0.5em 0;
+  box-shadow:
+    0px 3px 5px rgba(0, 0, 0, 0.4),
+    3px 0px 5px rgba(0, 0, 0, 0.4);
+}
+.puzzle__source .puzzle__item {
+  transform: scale(0.8);
+}
+
+.puzzle__hints {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 1em;
+  margin-block-start: 1em;
+}
+
+.puzzle__source_text {
+  margin: 0;
+}
+
+.puzzle__source_auto {
+  height: 2em;
+  margin: 0 auto;
+  transform: translateY(-0.5em);
+  width: 10em;
+  padding-top: 0.5em;
+  text-align: center;
+  border-radius: 0 0 1em 1em;
+  background-color: var(--color10);
+  transition: transform 0.25s ease-out;
+  cursor: pointer;
+}
+.puzzle__source_auto:hover {
+  transform: translateY(0);
+}
+
+@media screen and (max-width: 1024px) {
+  .puzzle__row,
+  .puzzle__source {
+    font-size: 1.1em;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .puzzle__row,
+  .puzzle__source {
+    font-size: 1em;
+  }
+}
