@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <!-- prettier-ignore -->
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./assets/favicon.svg">
+    <link rel="stylesheet" href="./styles/global.css">
+    <link rel="stylesheet" href="./styles/header.css">
+    <link rel="stylesheet" href="./styles/hero.css">
+    <link rel="stylesheet" href="./styles/favorite.css">
+    <link rel="stylesheet" href="./styles/about.css">
+    <link rel="stylesheet" href="./styles/mobile.css">
+    <link rel="stylesheet" href="./styles/footer.css">
+    <title>Coffee House</title>
+  </head>
+  <body>
+    <wrapper-tmpl include="./sections/header.tmpl"></wrapper-tmpl>
+    <main>
+      <wrapper-tmpl include="./sections/hero.tmpl"></wrapper-tmpl>
+      <wrapper-tmpl include="./sections/favorite.tmpl"></wrapper-tmpl>
+      <wrapper-tmpl include="./sections/about.tmpl"></wrapper-tmpl>
+      <wrapper-tmpl include="./sections/mobile.tmpl"></wrapper-tmpl>
+    </main>
+    <wrapper-tmpl include="./sections/footer.tmpl"></wrapper-tmpl>
+
+    <script src="./utils/templator.js"></script>
+    <script src="./scripts/route.js"></script>
+    <script src="./scripts/scroll.js"></script>
+    <script src="./scripts/burger.js"></script>
+    <script src="./scripts/slider.js"></script>
+    <script src="./scripts/device.js" type="module"></script>
+  </body>
+</html>

@@ -1,0 +1,65 @@
+<section id="favorite-coffee">
+  <h2>Choose your <i>favorite</i> coffee</h2>
+
+  <div class="slider-coffee">
+    <input type="radio" name="slider" id="coffee_1" checked />
+    <input type="radio" name="slider" id="coffee_2" />
+    <input type="radio" name="slider" id="coffee_3" />
+
+    <div class="slider__side" data-direction="left">
+      <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M36.5 30H24M24 30L30 24M24 30L30 36" stroke-linecap="round" stroke-linejoin="round" />
+      </svg>
+    </div>
+
+    <div class="slider">
+      <wrap-slider>
+        <div class="slider-img">
+          <div><img src="./assets/coffee-slider-1.png" alt="coffee" /></div>
+          <div><img src="./assets/coffee-slider-2.png" alt="coffee" /></div>
+          <div><img src="./assets/coffee-slider-3.png" alt="coffee" /></div>
+        </div>
+      </wrap-slider>
+
+      <wrap-bottom>
+        <wrap-text>
+          <div class="slider-text">
+            <div>
+              <h3>S’mores Frappuccino</h3>
+              <p>This new drink takes an espresso and mixes it with brown sugar and cinnamon before being topped with oat milk.</p>
+              <h3>$5.50</h3>
+            </div>
+            <div>
+              <h3>Caramel Macchiato</h3>
+              <p>Fragrant and unique classic espresso with rich caramel-peanut syrup, with cream under whipped thick foam.</p>
+              <h3>$5.00</h3>
+            </div>
+            <div>
+              <h3>Ice coffee</h3>
+              <p>A popular summer drink that tones and invigorates. Prepared from coffee, milk and ice.</p>
+              <h3>$4.50</h3>
+            </div>
+          </div>
+        </wrap-text>
+
+        <ul class="slider-controlls">
+          <li>
+            <span class="dot"><span></span></span>
+          </li>
+          <li>
+            <span class="dot"><span></span></span>
+          </li>
+          <li>
+            <span class="dot"><span></span></span>
+          </li>
+        </ul>
+      </wrap-bottom>
+    </div>
+
+    <div class="slider__side" data-direction="right">
+      <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M24 30H36.5M36.5 30L30.5 24M36.5 30L30.5 36" stroke-linecap="round" stroke-linejoin="round" />
+      </svg>
+    </div>
+  </div>
+</section>

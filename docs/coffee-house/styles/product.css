@@ -1,0 +1,121 @@
+#modal__product {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: var(--background-backdrop, rgba(64, 63, 61, 0.8));
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+#modal__product.active {
+  display: flex;
+}
+
+.modal__inner {
+  width: calc(100% - 2rem);
+  max-width: 48rem;
+  padding: 1rem;
+  border-radius: 2.5rem;
+  background: var(--background-body, #e1d4c9);
+}
+
+.modal__preview {
+  display: flex;
+  align-items: flex-start;
+  align-self: stretch;
+}
+
+.modal__img {
+  flex-shrink: 0;
+  width: 19.375rem;
+  height: 19.375rem;
+  border-radius: 2.5rem;
+  background-image: url('../assets/coffee-1.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 110%;
+  transition: all 200ms ease-in-out;
+}
+@media (hover: hover) and (min-width: 640px) {
+  .modal__img:hover {
+    background-size: 100%;
+  }
+}
+
+.modal__desc {
+  display: flex;
+  padding-left: 1.25rem;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+@media screen and (max-width: 768px) {
+  .modal__inner {
+    max-width: 41rem;
+  }
+
+  @media screen and (max-width: 600px) {
+    .modal__inner {
+      max-width: 19.375rem;
+    }
+    .modal__img {
+      display: none;
+    }
+    .modal__desc {
+      padding-left: unset;
+    }
+  }
+}
+
+.modal__desc_name {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.modal__desc_opt {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.modal__desc_opt input {
+  display: none;
+}
+
+#modal__desc_tabs_size,
+#modal__desc_tabs_add {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.modal__total {
+  display: flex;
+  justify-content: space-between;
+}
+
+.modal__alert {
+  display: flex;
+  padding: 0.75rem 0rem;
+  gap: 0.5rem;
+  border-top: 1px solid var(--border-light, #c1b6ad);
+}
+.modal__alert > span {
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  border: 1px solid var(--text-dark, #403f3d);
+  font-size: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+}
+.modal__alert p {
+  font-size: 0.625rem;
+  font-weight: 600;
+  line-height: 140%;
+}

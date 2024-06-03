@@ -1,0 +1,74 @@
+#contacts {
+  display: flex;
+  align-items: center;
+  margin: 0 2.5rem;
+  max-width: 85rem;
+  padding: 6.25rem;
+  gap: 6.25rem;
+  border-radius: 2.5rem;
+  background: var(--background-container, #665f55);
+  color: var(--text-light, #e1d4c9);
+}
+
+@media screen and (max-width: 1439px) {
+  #contacts {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 6.25rem 3.75rem;
+  }
+
+  @media screen and (max-width: 767px) {
+    #contacts {
+      margin: 0 1rem;
+      padding: 3.75rem 1rem;
+      gap: 2.5rem;
+    }
+  }
+}
+
+.contacts__info,
+.contacts__offer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 2.5rem;
+  flex: 1 0 0;
+}
+
+.contacts__info ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  list-style: none;
+  gap: 1.25rem;
+}
+
+.contacts__info li,
+.contacts__info li a {
+  display: flex;
+  align-items: center;
+  column-gap: 0.5rem;
+}
+
+.socials {
+  display: flex;
+  gap: 0.75rem;
+}
+.socials svg {
+  width: 3.75rem;
+  height: 3.75rem;
+  box-sizing: border-box;
+  border-radius: 6.25rem;
+  border: 1px solid var(--border-light, #c1b6ad);
+  stroke: var(--text-light, #e1d4c9);
+  transition: all 250ms linear;
+  cursor: pointer;
+}
+@media (hover: hover) and (min-width: 640px) {
+  .socials svg:hover {
+    background-color: var(--background-body, #e1d4c9);
+    stroke: var(--text-dark, #403f3d);
+  }
+}

@@ -1,0 +1,70 @@
+#about {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.5rem;
+  margin: -0.5rem 2.5rem 0;
+}
+
+.images {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-height: calc((100vw - 2.5rem) / (660 / 510));
+  gap: 2.5rem;
+  flex-wrap: wrap;
+}
+.images div {
+  width: calc(50% - 1.25rem);
+  aspect-ratio: 660/590;
+  border-radius: 1.25rem;
+  background-position: center;
+  background-size: 110%;
+  transition: all 300ms ease-in-out;
+}
+.images div:nth-child(2),
+.images div:nth-child(3) {
+  aspect-ratio: 660/430;
+}
+.images div:nth-child(1) {
+  background-image: url(../assets/about-1.jpg);
+}
+.images div:nth-child(2) {
+  background-image: url(../assets/about-2.jpg);
+}
+.images div:nth-child(3) {
+  background-image: url(../assets/about-3.jpg);
+}
+.images div:nth-child(4) {
+  background-image: url(../assets/about-4.jpg);
+}
+@media (hover: hover) and (min-width: 640px) {
+  .images div:hover {
+    background-size: 100%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .images {
+    max-height: unset;
+  }
+  .images div {
+    width: 100%;
+    aspect-ratio: 688/590;
+    background-size: 105%;
+  }
+  .images div:nth-child(2),
+  .images div:nth-child(3) {
+    display: none;
+  }
+
+  @media screen and (max-width: 380px) {
+    #about {
+      margin: -0.5rem 1rem 0;
+    }
+    .images div {
+      aspect-ratio: 348/590;
+      background-size: 210%;
+    }
+  }
+}

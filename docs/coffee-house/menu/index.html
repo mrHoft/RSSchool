@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <!-- prettier-ignore -->
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../assets/favicon.svg">
+    <link rel="stylesheet" href="../styles/global.css">
+    <link rel="stylesheet" href="../styles/menu.css">
+    <link rel="stylesheet" href="../styles/product.css">
+    <link rel="stylesheet" href="../styles/header.css">
+    <link rel="stylesheet" href="../styles/footer.css">
+    <title>Coffee House: Menu</title>
+  </head>
+  <body>
+    <wrapper-tmpl include="../sections/header.tmpl"></wrapper-tmpl>
+
+    <main>
+      <h1 hidden>Coffee house product menu</h1>
+      <section class="offer">
+        <h2>Behind each of our cups hides an <i>amazing surprise</i></h2>
+        <div class="tabs">
+          <input type="radio" name="tab" id="tab_coffee" value="coffee" checked />
+          <label for="tab_coffee" class="tab__item">
+            <span class="tab__item_icon">
+              <img src="../assets/svg/coffee.svg" alt="coffee" />
+            </span>
+            <span>Coffee</span>
+          </label>
+          <input type="radio" name="tab" id="tab_tea" value="tea" />
+          <label for="tab_tea" class="tab__item">
+            <span class="tab__item_icon">
+              <img src="../assets/svg/tea.svg" alt="tea" />
+            </span>
+            <span>Tea</span>
+          </label>
+          <input type="radio" name="tab" id="tab_dessert" value="dessert" />
+          <label for="tab_dessert" class="tab__item">
+            <span class="tab__item_icon">
+              <img src="../assets/svg/dessert.svg" alt="dessert" />
+            </span>
+            <span>Dessert</span>
+          </label>
+        </div>
+        <div id="offer__list">
+          <div class="offer__item"></div>
+        </div>
+        <div class="button__load_more">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M21.8883 13.5C21.1645 18.3113 17.013 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C16.1006 2 19.6248 4.46819 21.1679 8"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round" />
+            <path d="M17 8H21.4C21.7314 8 22 7.73137 22 7.4V3" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </div>
+      </section>
+    </main>
+    <wrapper-tmpl include="../sections/footer.tmpl"></wrapper-tmpl>
+    <wrapper-tmpl include="../sections/product.tmpl"></wrapper-tmpl>
+
+    <script src="../utils/templator.js"></script>
+    <script src="../scripts/route.js"></script>
+    <script src="../scripts/scroll.js"></script>
+    <script src="../scripts/burger.js"></script>
+    <script src="../scripts/products.js" type="module"></script>
+    <script src="../scripts/device.js" type="module"></script>
+  </body>
+</html>

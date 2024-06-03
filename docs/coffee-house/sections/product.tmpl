@@ -1,0 +1,65 @@
+<section id="modal__product">
+  <div class="modal__inner">
+    <div class="modal__preview">
+      <div class="modal__img"></div>
+      <div class="modal__desc">
+        <div class="modal__desc_name">
+          <h3 id="modal__name">Irish coffee</h3>
+          <p id="modal__desc">Fragrant black coffee with Jameson Irish whiskey and whipped milk</p>
+        </div>
+        <div class="modal__desc_opt">
+          <p>Size</p>
+          <div id="modal__desc_tabs_size">
+            <input type="radio" name="tab_size" id="tab_size1" value="200" checked />
+            <label for="tab_size1" class="tab__item">
+              <span class="tab__item_icon">S</span>
+              <span>200 ml</span>
+            </label>
+            <input type="radio" name="tab_size" id="tab_size2" value="300" />
+            <label for="tab_size2" class="tab__item">
+              <span class="tab__item_icon">M</span>
+              <span>300 ml</span>
+            </label>
+            <input type="radio" name="tab_size" id="tab_size3" value="400" />
+            <label for="tab_size3" class="tab__item">
+              <span class="tab__item_icon">L</span>
+              <span>400 ml</span>
+            </label>
+          </div>
+        </div>
+        <div class="modal__desc_opt">
+          <p>Additives</p>
+          <div id="modal__desc_tabs_add">
+            <input type="checkbox" id="tab_add1" value="1" />
+            <label for="tab_add1" class="tab__item">
+              <span class="tab__item_icon">1</span>
+              <span>Sugar</span>
+            </label>
+            <input type="checkbox" id="tab_add2" value="2" />
+            <label for="tab_add2" class="tab__item">
+              <span class="tab__item_icon">2</span>
+              <span>Cinnamon</span>
+            </label>
+            <input type="checkbox" id="tab_add3" value="3" />
+            <label for="tab_add3" class="tab__item">
+              <span class="tab__item_icon">3</span>
+              <span>Syrup</span>
+            </label>
+          </div>
+        </div>
+        <div class="modal__total">
+          <h3>Total:</h3>
+          <h3 id="modal__total">$7.00</h3>
+        </div>
+        <div class="modal__alert">
+          <span>i</span>
+          <p>
+            The cost is not final. Download our mobile app to see the final price and place your order. Earn loyalty points and enjoy your favorite coffee with
+            up to 20% discount.
+          </p>
+        </div>
+        <button class="button-secondary" onclick="modalToggle(document.getElementById('modal__product'));">Close</button>
+      </div>
+    </div>
+  </div>
+</section>
