@@ -1,0 +1,264 @@
+:root {
+  --color00: #fff;
+  --color10: #fff;
+  --color15: #f7f4f0;
+  --color20: #c8c8c8;
+  --color30: #bebebe;
+  --color40: #b4b4b4;
+  --color50: #047db7ff;
+  --color60: #00639bff;
+  --color70: #2b5278;
+  --color80: #1f3a55;
+  --color90: #17212b;
+  --color100: #000;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color00: #000;
+    --color10: #0e1621;
+    --color15: #17212b;
+    --color20: #1f3a55;
+    --color30: #2b5278;
+    --color40: #00639bff;
+    --color50: #047db7ff;
+    --color60: #3998d3ff;
+    --color70: #5ab3f0ff;
+    --color80: #8df;
+    --color90: #cef;
+    --color100: #fff;
+  }
+
+  .hangman__img {
+    filter: invert(1);
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  .header__title_img {
+    filter: invert(1);
+  }
+}
+
+html {
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--color100);
+  background: linear-gradient(to bottom, transparent, var(--color15)) var(--color10);
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  max-height: 100vh;
+  overflow: hidden;
+}
+
+.main {
+  max-width: 1024px;
+  margin: 2rem;
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+}
+
+wrapper-game {
+  max-height: calc(100vh - 10rem);
+  display: flex;
+  column-gap: 2rem;
+}
+
+.stifler {
+  position: relative;
+  flex-basis: 40%;
+  max-height: calc(100vh - 8rem);
+}
+
+.guesser {
+  flex-basis: 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.guesser__word,
+.guesser__keyboard {
+  text-align: center;
+}
+
+.guesser__btn {
+  width: fit-content;
+}
+
+.guesser__result {
+  font-size: 1.5em;
+  margin-bottom: 0;
+}
+
+.hangman__img {
+  width: 100%;
+  height: 100%;
+}
+
+.guesser__word_sportlight {
+  font-size: 2.5em;
+  font-weight: 600;
+  font-family: monospace;
+  text-transform: uppercase;
+}
+
+.guesser__counter {
+  color: red;
+}
+
+.btn {
+  border: none;
+  outline: none;
+  display: inline-block;
+  font-weight: 400;
+  user-select: none;
+  color: var(--color100);
+  background-color: var(--color50);
+  padding: 0.5rem 1.5rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  border-radius: 0.5rem;
+  margin: 0.25rem;
+  transition: background-color 0.25s ease-in-out;
+}
+
+.btn:disabled {
+  background-color: var(--color30);
+}
+
+.btn:not(:disabled) {
+  cursor: pointer;
+}
+
+.btn:not(:disabled):hover {
+  background-color: var(--color40);
+}
+
+.btn__keyboard {
+  width: 2.5rem;
+  font-size: 1.25rem;
+  padding-left: unset;
+  padding-right: unset;
+  /* font-family: "Courier New", Courier, monospace; */
+  text-transform: uppercase;
+  /* font-weight: 500; */
+}
+
+.hidden {
+  display: none !important;
+}
+
+@media screen and (max-width: 767px) {
+  html {
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 479px) {
+  html {
+    font-size: 10px;
+  }
+}
+/* Header */
+.header {
+  width: 100vw;
+  width: -webkit-fill-available;
+  height: 3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 4rem;
+  background-color: var(--color20);
+}
+
+.header__title {
+  font-size: 2rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  column-gap: 2rem;
+}
+
+.header__title_img {
+  width: 2.5rem;
+  height: 2.5rem;
+}
+
+/* Footer */
+.footer {
+  width: 100vw;
+  width: -webkit-fill-available;
+  height: 3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 4rem;
+  background-color: var(--color20);
+}
+
+.author {
+  display: flex;
+  align-items: center;
+  column-gap: 2rem;
+}
+
+a,
+a:visited {
+  color: inherit;
+  text-decoration: none;
+  opacity: 1;
+  transition: opacity 0.3s linear;
+}
+a:hover {
+  opacity: 0.6;
+}
+
+.rss-logo {
+  width: 5.4rem;
+  height: 2rem;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-image: url("./assets/rss.svg");
+  transition: opacity 0.3s linear;
+  opacity: 1;
+}
+.rss-logo:hover {
+  opacity: 0.6;
+}
+
+/* Modal */
+.modal {
+  z-index: 900;
+  position: fixed;
+  width: 100dvw;
+  height: 100dvh;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal__inner {
+  background-color: var(--color15, #fff);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 0.75rem;
+  width: 100%;
+  max-width: 25rem;
+  padding: 2rem 1rem 1rem;
+  margin: 1rem;
+  row-gap: 1rem;
+}

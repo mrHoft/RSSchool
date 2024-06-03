@@ -1,0 +1,22 @@
+[
+  {
+    "question": "Programming language",
+    "words": ["python", "javascript", "java", "csharp", "golang", "kotlin", "pascal"]
+  },
+  {
+    "question": "JavaScript bundler",
+    "words": ["webpack", "vite", "rollup", "parcel"]
+  },
+  {
+    "question": "Code style tool",
+    "words": ["eslint", "prettier"]
+  },
+  {
+    "question": "JavaScript testing utility",
+    "words": ["jest", "mocha", "chai"]
+  },
+  {
+    "question": "Popular JavaScript library",
+    "words": ["react", "angular", "express", "lodash"]
+  }
+]
