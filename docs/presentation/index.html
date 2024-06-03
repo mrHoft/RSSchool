@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title>Presentation: modals</title>
+
+    <link rel="stylesheet" href="./dist/reset.css" />
+    <link rel="stylesheet" href="./dist/reveal.css" />
+    <link rel="stylesheet" href="./dist/theme/black.css" />
+    <link rel="stylesheet" href="./plugin/highlight/monokai.css" />
+    <link rel="stylesheet" href="./src/modal/styles.css" />
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section>
+          <h3>Using modal elements</h3>
+          <p>in frontend development</p>
+          <img src="./assets/ranjy.png" style="height: 200px; border-radius: 50%; box-shadow: 5px 5px 5px black" />
+          <p>by <a href="https://github.com/mrHoft">mrHoft</a> © 2024</p>
+        </section>
+        <section>
+          <div class="modal">
+            <div class="modal__outer">
+              <div class="modal__close"><img src="./assets/close.svg" /></div>
+              <div class="modal__inner">
+                <h1 style="text-transform: unset">Example</h1>
+                <p>This is example modal window.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section data-auto-animate data-auto-animate-unmatched="fade">
+          <p>First of all let's create 'modal' class:</p>
+          <pre data-id="code"><code data-line-numbers class="hljs" data-trim>
+class Modal {
+  #el;
+
+  constructor() {
+    this.#el = document.createElement("div");
+  }
+}
+					</code></pre>
+        </section>
+        <section data-auto-animate data-auto-animate-unmatched="fade">
+          <p>Now. Le's add getter:</p>
+          <p>(it will need us to append modal to an App)</p>
+          <pre data-id="code"><code data-line-numbers class="hljs" data-trim>
+class Modal {
+  #el;
+
+  constructor() {
+    this.#el = document.createElement("div");
+  }
+
+  get el() {
+    return this.#el;
+  }
+}
+					</code></pre>
+        </section>
+        <section data-auto-animate data-auto-animate-unmatched="fade">
+          <p>Next: construct the modal it self.</p>
+          <pre data-id="code"><code data-line-numbers class="hljs" data-trim>
+constructor() {
+  this.#el = document.createElement("div");
+  // It will be initially hidden
+  this.#el.className = "modal hidden";
+
+  // Modal window content element
+  this.#inner = document.createElement("div");
+  this.#inner.className = "modal__inner";
+
+  // Modal window appearance element
+  const outer = document.createElement("div");
+  outer.className = "modal__outer";
+  outer.append(this.#inner);
+}
+					</code></pre>
+        </section>
+        <section data-auto-animate data-auto-animate-unmatched="fade">
+          <p>It will be good to add a cross to close modal:</p>
+          <pre data-id="code"><code data-line-numbers class="hljs" data-trim>
+// Close button element
+const close = document.createElement("div");
+close.className = "modal__close";
+close.onclick = this.close;
+const closeImg = document.createElement("img");
+closeImg.src = "./assets/close.svg";
+close.append(closeImg);
+					</code></pre>
+        </section>
+        <section data-auto-animate data-auto-animate-unmatched="fade">
+          <p>Also we need public 'close' method:</p>
+          <pre data-id="code"><code data-line-numbers class="hljs" data-trim>
+close = () => {
+  this.#el.classList.add("hidden");
+};
+					</code></pre>
+        </section>
+        <section data-auto-animate data-auto-animate-unmatched="fade">
+          <p>And private 'handleClick' event handler:</p>
+          <pre data-id="code"><code data-line-numbers class="hljs" data-trim>
+#handleClick = event => {
+  const { target, currentTarget } = event;
+  if (target === currentTarget) {
+    event.preventDefault();
+    this.close();
+  }
+};
+					</code></pre>
+          <p>This handler closes modal on any click outside the modal window area.</p>
+        </section>
+        <section data-auto-animate data-auto-animate-unmatched="fade">
+          <p>At least, we need public 'show' method:</p>
+          <pre data-id="code"><code data-line-numbers class="hljs" data-trim>
+show(fragment) {
+  this.#el.classList.remove("hidden");
+  this.#inner.replaceChildren(fragment);
+}
+					</code></pre>
+          <p>This method receives an element fragment that will be placed inside modal window.</p>
+        </section>
+        <section>
+          <p>Putting it all together:</p>
+          <pre data-id="code"><code data-line-numbers class="hljs" data-trim>
+// modal.js
+const srcClose = "./assets/close.svg";
+
+class Modal {
+  #el;
+  #inner;
+
+  constructor() {
+    this.#el = document.createElement("div");
+    this.#el.className = "modal hidden";
+    this.#el.onclick = this.#handleClick;
+
+    const close = document.createElement("div");
+    close.className = "modal__close";
+    close.onclick = this.close;
+    const closeImg = document.createElement("img");
+    closeImg.src = srcClose;
+    close.append(closeImg);
+
+    this.#inner = document.createElement("div");
+    this.#inner.className = "modal__inner";
+
+    const outer = document.createElement("div");
+    outer.className = "modal__outer";
+    outer.append(close, this.#inner);
+
+    this.#el.append(outer);
+  }
+
+  get el() {
+    return this.#el;
+  }
+
+  show(fragment) {
+    this.#el.classList.remove("hidden");
+    this.#inner.replaceChildren(fragment);
+  }
+
+  close = () => {
+    this.#el.classList.add("hidden");
+  };
+
+  #handleClick = event => {
+    const { target, currentTarget } = event;
+    if (target === currentTarget) {
+      event.preventDefault();
+      this.close();
+    }
+  };
+}
+
+const modal = new Modal();
+export default modal;
+					</code></pre>
+        </section>
+        <section data-auto-animate data-auto-animate-unmatched="fade">
+          <p>Now. Styles:</p>
+          <pre data-id="code"><code data-line-numbers class="hlcss" data-trim>
+.modal {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  // 75% transpagent black background:
+  background-color: #0004;
+  z-index: 100;
+  // Center our modal:
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+					</code></pre>
+        </section>
+        <section data-auto-animate data-auto-animate-unmatched="fade">
+          <p>Add appear animation:</p>
+          <pre data-id="code"><code data-line-numbers class="hlcss" data-trim>
+  .modal {
+    ...
+    animation: reveal 0.3s forwards;
+  }
+  
+  @keyframes reveal {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+            </code></pre>
+        </section>
+        <section data-auto-animate data-auto-animate-unmatched="fade">
+          <p>Window it self apperance:</p>
+          <pre data-id="code"><code data-line-numbers class="hlcss" data-trim>
+.modal__outer {
+  position: relative;
+  min-width: 20em;
+  background-color: #333;
+  border-radius: 1em;
+  padding: 1em;
+  box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.4),
+    3px 0px 5px rgba(0, 0, 0, 0.4);
+}
+            </code></pre>
+        </section>
+        <section data-auto-animate data-auto-animate-unmatched="fade">
+          <p>'Cross' button apperance:</p>
+          <pre data-id="code"><code data-line-numbers class="hlcss" data-trim>
+.modal__close {
+  position: absolute;
+  top: 1em;
+  right: 1em;
+  padding: 0.5em;
+  width: 1.5em;
+  height: 1.5em;
+  cursor: pointer;
+  transition: opacity 0.25s linear;
+}
+
+.modal__close:hover {
+  opacity: 0.65;
+}
+            </code></pre>
+        </section>
+        <section data-auto-animate data-auto-animate-unmatched="fade">
+          <p>'Cross' image apperance:</p>
+          <pre data-id="code"><code data-line-numbers class="hlcss" data-trim>
+.modal__close img {
+  margin: 0;
+  width: 1.5em;
+  height: 1.5em;
+}
+            </code></pre>
+        </section>
+        <section data-auto-animate data-auto-animate-unmatched="fade">
+          <p>Lets also add dark theme support:</p>
+          <pre data-id="code"><code data-line-numbers class="hlcss" data-trim>
+@media (prefers-color-scheme: dark) {
+  .modal__close img {
+    filter: invert(1);
+  }
+}
+            </code></pre>
+        </section>
+        <section>
+          <p>All styles together:</p>
+          <pre data-id="code"><code data-line-numbers class="hlcss" data-trim>
+// styles.css
+
+.modal {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #0004;
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: reveal 0.3s forwards;
+}
+@keyframes reveal {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.modal__outer {
+  position: relative;
+  min-width: 20em;
+  background-color: #333;
+  border-radius: 1em;
+  padding: 1em;
+  box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.4),
+    3px 0px 5px rgba(0, 0, 0, 0.4);
+}
+
+.modal__inner {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal__close {
+  position: absolute;
+  top: 1em;
+  right: 1em;
+  padding: 0.5em;
+  width: 1.5em;
+  height: 1.5em;
+  cursor: pointer;
+  transition: opacity 0.25s linear;
+}
+.modal__close:hover {
+  opacity: 0.65;
+}
+.modal__close img {
+  margin: 0;
+  width: 1.5em;
+  height: 1.5em;
+}
+@media (prefers-color-scheme: dark) {
+  .modal__close img {
+    filter: invert(1);
+  }
+}
+
+.hidden {
+  display: none;
+}
+            </code></pre>
+        </section>
+        <section>
+          <p>Good. Now we have:</p>
+          <ul>
+            <li>modal.js</li>
+            <li>styles.css</li>
+            <li>close.svg</li>
+          </ul>
+          <pre data-id="code"><code data-line-numbers class="hljs" data-trim>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="18" height="18" viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg">
+  <line stroke="#000" x1="3" y1="3" x2="15" y2="15"/>
+  <line stroke="#000" x1="3" y1="15" x2="15" y2="3"/>
+</svg>
+					</code></pre>
+          <p>It is all what we need to start using modal window.</p>
+        </section>
+        <section data-auto-animate data-auto-animate-unmatched="fade">
+          <p>We must add our modal to a document:</p>
+          <pre data-id="code"><code data-line-numbers class="hljs" data-trim>
+// App.js
+import modal from "./ui/modal/modal.js";
+
+export default function App() {
+  ...
+  // Remember about getter?
+  // it returns our modal element
+  document.body.append(modal.el)
+}
+					</code></pre>
+          <p>It is a good practice to apppend modals at the bottom of the 'body' element.</p>
+          <p>In React use <a href="https://react.dev/reference/react-dom/createPortal">createPortal</a> for this purpose.</p>
+        </section>
+        <section data-auto-animate data-auto-animate-unmatched="fade">
+          <p>Let's create main.js module:</p>
+          <pre data-id="code"><code data-line-numbers class="hljs" data-trim>
+// App.js
+import modal from "./ui/modal/modal.js";
+import main from "./main.js";
+
+export default function App() {
+  document.body.append(main())
+  ...
+  document.body.append(modal.el)
+}
+					</code></pre>
+        </section>
+        <section data-auto-animate data-auto-animate-unmatched="fade">
+          <p>Let's create main.js module:</p>
+          <pre data-id="code"><code data-line-numbers class="hljs" data-trim>
+// main.js
+import modal from "./modal.js";
+
+function showModal() {
+  modal.show(/* content */);
+}
+
+export default function main() {
+  showModal();
+}
+					</code></pre>
+        </section>
+        <section data-auto-animate data-auto-animate-unmatched="fade">
+          <p>Let's create example modal content:</p>
+          <pre data-id="code"><code data-line-numbers class="hljs" data-trim>
+function showModal() {
+  const fragment = document.createDocumentFragment();
+  const h1 = document.createElement("h1");
+  h1.textContent = "Example";
+  const p = document.createElement("p");
+  p.textContent = "This is example modal window.";
+  fragment.append(h1, p);
+
+  modal.show(fragment);
+}
+					</code></pre>
+        </section>
+        <section data-auto-animate data-auto-animate-unmatched="fade">
+          <p>Let's add 'open modal' button:</p>
+          <pre data-id="code"><code data-line-numbers class="hljs" data-trim>
+// main.js
+import modal from "./modal.js";
+
+function showModal() {
+  ...
+}
+
+export default function main() {
+  const button = document.createElement('button')
+  button.textContent='Show modal'
+  button.onclick = showModal
+
+  return button
+}
+					</code></pre>
+          <button class="modal__button" onclick="document.showModal();">Show modal</button>
+        </section>
+        <section data-auto-animate data-auto-animate-unmatched="fade">
+          <h2>Summary</h2>
+          <p>Now you can open modal from any place of your app with any content:</p>
+          <button class="modal__button" onclick="document.showModal();">Show modal</button>
+          <p>Modals is usefull to:</p>
+          <ul>
+            <li>Inform user</li>
+            <li>Interact using forms</li>
+            <li>Open additional information</li>
+            <li>Upselling</li>
+            <li>Introducing new features</li>
+            <li>Many other...</li>
+          </ul>
+        </section>
+      </div>
+    </div>
+
+    <script src="./dist/reveal.js"></script>
+    <script src="./plugin/notes/notes.js"></script>
+    <script src="./plugin/markdown/markdown.js"></script>
+    <script src="./plugin/highlight/highlight.js"></script>
+    <script type="module" src="./src/modal/show.js"></script>
+    <script>
+      Reveal.initialize({
+        hash: true,
+        plugins: [RevealMarkdown, RevealHighlight, RevealNotes],
+      });
+    </script>
+  </body>
+</html>
